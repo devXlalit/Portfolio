@@ -1,13 +1,7 @@
-import React, { useState } from "react";
 import mainLogo from "../../assets/Project 2_3 (1).png";
 import { Link, NavLink } from "react-router-dom";
-import {
-  RiCloseLargeLine,
-  RiCrop2Fill,
-  RiCrossLine,
-  RiCrosshairLine,
-  RiMenu2Line,
-} from "@remixicon/react";
+import { RiCloseLargeLine, RiMenu2Line } from "@remixicon/react";
+import { useState } from "react";
 const Navbar = () => {
   const [menu, openMenu] = useState(false);
   const [showMenu, setShowmenu] = useState(true);
@@ -39,7 +33,7 @@ const Navbar = () => {
         </li>
         <li
           id="work"
-          classsName="text-xl transition ease delay-150 duration-300 p-2 md:p-0"
+          className="text-xl transition ease delay-150 duration-300 p-2 md:p-0"
         >
           <NavLink
             to="/work"

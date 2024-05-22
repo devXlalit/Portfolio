@@ -1,16 +1,20 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import "./index.css";
-import { RouterProvider, createBrowserRouter } from "react-router-dom";
-import Layout from "./Layout.jsx";
+import {
+  RouterProvider,
+  // createBrowserRouter,
+  createHashRouter,
+} from "react-router-dom";
+import App from "./App.jsx";
 import Home from "./components/Home/Home.jsx";
 import Work from "./components/Works/Work.jsx";
 import About from "./components/About/About.jsx";
 
-const router = createBrowserRouter([
+const router = createHashRouter([
   {
     path: "/",
-    element: <Layout />,
+    element: <App />,
     children: [
       {
         path: "",
