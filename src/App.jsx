@@ -4,7 +4,7 @@ import Contact from "./components/Contact/Contact";
 
 const App = () => {
   return (
-    <div className="p-12 font-[Gilroy]">
+    <div className="p-12 font-[gilroy-heavy] ">
       <Navbar />
       <Contact />
       <Outlet />

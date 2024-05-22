@@ -6,7 +6,7 @@ const Contact = () => {
   return (
     <div>
       {isHovered && (
-        <span className="bg-[#EAEAEA] hidden md:block p-3 rounded-full fixed bottom-10 right-24 hover:scale-105 duration-300 cursor-pointer ">
+        <span className="bg-[#EAEAEA] hidden md:block p-3 rounded-full fixed bottom-10 right-24 hover:scale-105 duration-300 cursor-pointer font-[gilroy-medium] ">
           Let's talk!
         </span>
       )}

@@ -29,7 +29,7 @@ const About = () => {
             id="radial-bar2"
             className="h-2  ms-14 md:ms-0 md:h-4 w-12 md:w-20 bg-[#FF2E63] rounded-full"
           ></div>
-          <p className="pt-6 pb-4 text-sm md:text-lg">
+          <p className="pt-6 pb-4 text-sm md:text-lg font-[gilroy-medium]">
             <b>
               I'm a passionate Full Stack Web Developer who builds meaningful
               websites that users love to experience!

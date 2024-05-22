@@ -1,5 +1,3 @@
-import React from "react";
-
 import proGif1 from "../../assets/Project-gif/ViteReact-GoogleChrome2024-04-2503-23-44-ezgif.com-video-to-gif-converter.gif";
 import proGif2 from "../../assets/Project-gif/moviewebpagevideo-ezgif.com-video-to-gif-converter.gif";
 import proGif3 from "../../assets/Project-gif/Timeline1-ezgif.com-video-to-gif-converter.gif";
@@ -8,14 +6,7 @@ import proGif5 from "../../assets/Project-gif/pr6-ezgif.com-video-to-gif-convert
 import proGif6 from "../../assets/Project-gif/pr7-ezgif.com-video-to-gif-converter.gif";
 import proGif7 from "../../assets/Project-gif/comingsoon-ezgif.com-optimize.gif";
 import proGif8 from "../../assets/Project-gif/proiamg.gif";
-import {
-  RiAdvertisementLine,
-  RiGitRepositoryCommitsLine,
-  RiGitRepositoryLine,
-  RiGithubLine,
-  RiLink,
-  RiLinkM,
-} from "@remixicon/react";
+import { RiGitRepositoryLine, RiGithubLine, RiLink } from "@remixicon/react";
 const Work = () => {
   return (
     <div>
@@ -37,7 +28,7 @@ const Work = () => {
           <h2 className="pt-8 text-xl leading-none md:text-3xl font-extrabold">
             Freelance at Quolomb, Vijay Nagar (Indore)
           </h2>
-          <p className="pt-6 pb-4 text-sm md:text-lg">
+          <p className="pt-6 pb-4 text-sm md:text-lg font-[gilroy-medium]">
             <b>
               👉I recently completed a freelance web development project for{" "}
               <a
@@ -85,7 +76,7 @@ const Work = () => {
             className="h-2 md:h-4 w-12 md:w-20 bg-[#FF2E63] rounded-full"
           ></div>
           <div className="mt-10 md:w-80 p-4 md:p-6 shadow-lg shadow-zinc-500/50 rounded-2xl">
-            <h2 className="md:text-xl ">
+            <h2 className="md:text-xl font-[gilroy-medium] ">
               <b>useApi (React Hook) - </b>
               This React API hook makes API fetching easier. It takes a URL as a
               parameter and returns three values: response, error, and loading.

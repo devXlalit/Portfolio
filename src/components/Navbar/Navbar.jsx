@@ -2,12 +2,13 @@ import mainLogo from "../../assets/Project 2_3 (1).png";
 import { Link, NavLink } from "react-router-dom";
 import { RiCloseLargeLine, RiMenu2Line } from "@remixicon/react";
 import { useState } from "react";
+
 const Navbar = () => {
   const [menu, openMenu] = useState(false);
   const [showMenu, setShowmenu] = useState(true);
   return (
     <nav
-      className="flex flex-wrap justify-between font-[Gilroy] font-medium"
+      className={`flex flex-wrap justify-between font-[gilroy-regular] font-medium`}
       data-scroll
     >
       <span>
