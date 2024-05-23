@@ -106,7 +106,7 @@ const Work = () => {
           <div className="flex flex-wrap gap-7 md:px-6" id="rec-pro">
             <ProjectCard
               imgSrc={proGif1}
-              link="https://devxlalit.github.io/javascript_bootcamp/"
+              link="https://js-bootcamp-test.vercel.app/"
               buttonText="Visit"
               buttonIcon={<RiLink size={20} />}
             />
