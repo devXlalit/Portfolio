@@ -1,11 +1,6 @@
-import React from "react";
 import proFile from "../../assets/final_image-removebg-preview.png";
-import resume from "../../assets/Resume.pdf";
-import {
-  RiDownload2Line,
-  RiDownloadCloud2Line,
-  RiDownloadLine,
-} from "@remixicon/react";
+import resume from "../../assets/Pagare.Lalit.FullStackWeb.Dev.Resume.pdf";
+import { RiDownloadLine } from "@remixicon/react";
 const About = () => {
   return (
     <div className="">
@@ -44,7 +39,7 @@ const About = () => {
             roadmap. Through these events, I equip them with the skills and
             direction they need to thrive.
           </p>
-          <a href={resume} download="resume.pdf">
+          <a href={resume} download="Pagare.lalit.dev.resume.pdf">
             <button
               id="btn-down"
               className="font-extrabold flex items-center gap-2 text-sm px-6 md:px-12 text-[#EAEAEA] bg-[#252A34] py-3 md:h-12 mt-8 rounded-full hover:bg-[#EAEAEA] hover:text-[#252A34] duration-300"
