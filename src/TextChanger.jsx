@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-
+import { delay, motion } from "framer-motion";
 const TextChanger = () => {
   const texts = ["FULL STACK  ", "MERN STACK  ", "FRONT END  ", "BACK END  "];
 
@@ -32,11 +32,15 @@ const TextChanger = () => {
   }, [endValue, isForward, index, texts]);
 
   return (
-    <div>
+    <motion.div
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ delay: 1, duration: 0.8 }}
+    >
       <p id="change-text" className="transition ease duration-300">
         {currentText}
       </p>
-    </div>
+    </motion.div>
   );
 };
 

@@ -21,12 +21,11 @@ const Navbar = () => {
           menu ? "block" : "hidden"
         }  md:border-none text-center md:w-auto md:bg-transparent md:static md:mx-0 md:flex gap-6`}
       >
-        {/* make display of nav block when user click on hemberg */}
         <li className="text-xl transition ease delay-150 duration-300 p-2 md:p-0">
           <NavLink
             to="/"
             className={({ isActive }) =>
-              `${isActive && "border-b-4 border-[#08D9D6] text-xl "}`
+              `${isActive && "border-b-4 border-[#08D9D6] text-xl"}`
             }
           >
             HOME

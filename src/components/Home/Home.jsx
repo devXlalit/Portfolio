@@ -1,81 +1,99 @@
-import React from "react";
-import { RiGithubFill } from "@remixicon/react";
+import {
+  RiBootstrapFill,
+  RiGithubFill,
+  RiNextjsFill,
+  RiNotionFill,
+  RiTailwindCssFill,
+} from "@remixicon/react";
 import { RiLinkedinBoxFill } from "@remixicon/react";
 import { RiStackOverflowFill } from "@remixicon/react";
 import { RiInstagramFill } from "@remixicon/react";
 import { RiScrollToBottomLine } from "@remixicon/react";
-// importing Images
-// Frontend
-import ReactLogo from "../../assets/Images/1174949_js_react js_logo_react_react native_icon.webp";
-import jsLogo from "../../assets/Images/javascript-39394.webp";
-import htmlLogo from "../../assets/Images/dfsdf.webp";
-import tailwindLogo from "../../assets/Images/pngwing.com (2).webp";
-import bootstarpLogo from "../../assets/Images/pngwing.com (3).webp";
-import photoshopLogo from "../../assets/Images/pngwing.com (6).webp";
-import IllustratorLogo from "../../assets/Images/pngwing.com (7).webp";
-import cssLogo from "../../assets/Images/pngwing.com (1).webp";
-import figmaLogo from "../../assets/Images/pngwing.com (8).webp";
-import framerLogo from "../../assets/Images/framer-motion.svg";
-import gsapLogo from "../../assets/Images/gsap-greensock.svg";
-import githubLogo from "../../assets/Images/pngwing.com (4).webp";
-import shadcnLogo from "../../assets/Images/shadcn-ui-seeklogo.svg";
-import reduxLogo from "../../assets/Images/5848309bcef1014c0b5e4a9a.png";
-import jqueryLogo from "../../assets/Images/pngwing.com (4).png";
+
 import "animate.css";
-
-// Backend
-import nodeJs from "../../assets/Images/885px-Node.js_logo.svg.webp";
-import ejs from "../../assets/Images/EJS-Abrv._Green-Grass_High-Res.webp";
-import expressJs from "../../assets/Images/node-js-express-js-javascript-solution-stack-web-application-others-237f81086df923da9c2718e6170912c9.webp";
-import nextJs from "../../assets/Images/pngwing.com (5).webp";
-import passport from "../../assets/Images/Passport-01.svg";
-import api from "../../assets/Images/pngwing.com (9).webp";
-import postgreSql from "../../assets/Images/pngwing.com.webp";
-import npm from "../../assets/Images/810px-Npm-logo.svg.png";
-import mongoDb from "../../assets/Images/MongoDB_logo_PNG1.webp";
-import firebase from "../../assets/Images/firebase.png";
-import oAuth from "../../assets/Images/oauth.png";
-
-// TOOLS
-import vsCode from "../../assets/Images/vscode.png";
-import Git from "../../assets/Images/pngegg(2).webp";
-import Postman from "../../assets/Images/pngwing.com (10).webp";
-import Vercel from "../../assets/Images/5848309bcef1014c0b5e4a9a.png";
-import Netlify from "../../assets/Images/c++.webp";
-import Neovim from "../../assets/Images/neovim.svg";
-
-// Languages
-import Python from "../../assets/Images/python.webp";
-import Java from "../../assets/Images/java.webp";
-import Cplusplus from "../../assets/Images/c++.webp";
-import R from "../../assets/Images/r-programming-language-icon.png";
-import C from "../../assets/Images/cpro.png";
-import Javascript from "../../assets/Images/javascript-39394.webp";
 import { Link } from "react-router-dom";
 import TextChanger from "../../TextChanger";
-import bashScript from "../../assets/Images/full_colored_dark.svg";
+import Tooltipx from "../Tooltipx";
+
+import { color, delay, motion } from "framer-motion";
+import {
+  FaFigma,
+  FaGitAlt,
+  FaGithub,
+  FaHtml5,
+  FaJava,
+  FaJs,
+  FaLinux,
+  FaNodeJs,
+  FaReact,
+} from "react-icons/fa";
+import {
+  SiAdobeillustrator,
+  SiAdobephotoshop,
+  SiAppwrite,
+  SiExpress,
+  SiGnubash,
+  SiGooglecloud,
+  SiJquery,
+  SiMongodb,
+  SiMongoose,
+  SiNetlify,
+  SiNpm,
+  SiObsidian,
+  SiPassport,
+  SiPostman,
+  SiRedux,
+  SiShadcnui,
+} from "react-icons/si";
+import { IoLogoCss3 } from "react-icons/io";
+import { FiFramer } from "react-icons/fi";
+import { MdAnimation } from "react-icons/md";
+import { TbApi, TbBrandCpp, TbBrandOauth } from "react-icons/tb";
+import { BiLogoPostgresql } from "react-icons/bi";
+import { IoLogoVercel, IoTerminal } from "react-icons/io5";
+import { VscVscode } from "react-icons/vsc";
+import { DiPython } from "react-icons/di";
+
 const Home = () => {
   return (
-    <div
-      class="h-auto w-full pt-12 py-0 md:p-12  font-extrabold "
+    <motion.div
+      className="h-auto w-full pt-12 py-0 md:p-12  font-extrabold "
       id="container"
-      data-scroll
-      data-scroll-speed="4"
     >
-      <h1 class="text-center md:text-left text-6xl md:text-8xl leading-tight ">
+      <motion.h1
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ delay: 1, duration: 0.8 }}
+        className="text-center md:text-left text-6xl md:text-8xl leading-tight "
+      >
         I'm <span className="text-[#08D9D6]">Lalit,</span>
-      </h1>
-      <h1 class="text-center md:text-left text-4xl md:text-8xl">
+      </motion.h1>
+      <motion.h1
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ delay: 1, duration: 0.8 }}
+        className="text-center md:text-left text-4xl md:text-8xl"
+      >
         <span id="change-text" className="w-full">
           {<TextChanger />}
         </span>
-        <span className="text-[#FF2E63]">DEVELOPER</span>
-      </h1>
-      <div
+        <motion.span
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 1, duration: 0.8 }}
+          className="text-[#FF2E63]"
+        >
+          DEVELOPER
+        </motion.span>
+      </motion.h1>
+      <motion.div
+        initial={{ opacity: 0, x: -50 }}
+        animate={{ opacity: 1, x: 0 }}
+        transition={{ delay: 1, duration: 0.8 }}
         id="bottom"
-        class="flex flex-wrap justify-center md:justify-start md:gap-32"
+        className="flex flex-wrap justify-center md:justify-start md:gap-32"
       >
-        <div class="flex gap-5 pt-10" id="social">
+        <div className="flex gap-5 pt-10" id="social">
           <a
             href="https://www.linkedin.com/in/lalit-pagare-b4926b228"
             target="_blank"
@@ -107,120 +125,108 @@ const Home = () => {
             />
           </a>
         </div>
-        <button
+        <motion.button
+          whileHover={{ scale: 1.1 }}
+          transition={{
+            type: "spring",
+            stiffness: 400,
+            damping: 10,
+          }}
           id="button"
           className="text-sm px-6 md:px-12 text-[#EAEAEA] bg-[#252A34] py-3 md:h-12 mt-8 rounded-full hover:bg-[#EAEAEA] hover:text-[#252A34] duration-300"
           //   className="px-14 py-1 mt-8 rounded-full hover:bg-white slide_from_left"
         >
           <Link to="/work">Explore my work...</Link>
-        </button>
-        <RiScrollToBottomLine
-          size={30}
-          className="animate__animated animate__shakeY infinite animate__delay-4s animate__slower animate__infinite absolute hidden lg:block md:right-80 md:bottom-14"
-        />
-      </div>
-      <div id="skills" className="pt-36 h-auto" data-scroll>
-        <h2
+        </motion.button>
+        <motion.span
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 2, duration: 0.8 }}
+        >
+          <RiScrollToBottomLine
+            size={30}
+            className="animate__animated animate__shakeY infinite animate__delay-4s animate__slower animate__infinite absolute hidden lg:block md:right-80 md:bottom-14"
+          />
+        </motion.span>
+      </motion.div>
+      <motion.div layout id="skills" className="pt-36 h-auto">
+        <motion.h2
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 1, duration: 0.8 }}
           className="text-2xl leading-7 md:text-5xl font-extrabold"
-          data-scroll-direction="2"
         >
           SKILLS & TECHNOLOGIES
-        </h2>
-        <div
+        </motion.h2>
+        <motion.div
+          initial={{ opacity: 0.2, width: "0%" }}
+          animate={{ opacity: 1, width: "10%" }}
+          transition={{ duration: 1 }}
           id="radial-bar1"
           className="h-2 md:h-4 w-12 md:w-20 bg-[#08D9D6] rounded-full "
-          data-scroll
-          data-scroll-speed="2"
-        ></div>
+        ></motion.div>
         <div className="mt-12 md:p-12 flex gap-5 flex-wrap justify-center w-full">
           <div className="skills-card-sm drop-shadow-2xl rounded-3xl p-6 md:w-96 shadow-lg md:p-12">
             <h1 className="text-xl md:text-3xl font-extrabold text-center">
               FRONT-END
             </h1>
-            <div className="flex mt-8 flex-wrap gap-5">
-              <img
-                className="h-8 md:h-10"
-                title="React Js"
-                src={ReactLogo}
-                alt="React Js"
+
+            <div className="flex mt-8 flex-wrap gap-5 justify-center">
+              <Tooltipx
+                icon={<FaReact size={40} color="#61DAFB" />}
+                title="React "
               />
-              <img
-                className="h-8 md:h-10"
-                title="Javascript"
-                src={jsLogo}
-                alt="Javascript"
+              <Tooltipx
+                icon={<SiRedux size={40} color="#764ABC" />}
+                title="Redux "
               />
-              <img
-                className="h-8 md:h-10"
-                title="HTML"
-                src={htmlLogo}
-                alt="HTML"
+              <Tooltipx
+                icon={<FaJs size={40} color="#F7DF1E" />}
+                title="JavaScript "
               />
-              <img
-                className="h-8 md:h-10"
-                title="Tailwind Css"
-                src={tailwindLogo}
-                alt="Tailwind Css"
+              <Tooltipx
+                icon={<FaHtml5 size={40} color="#E34F26" />}
+                title="HTML "
               />
-              <img
-                className="h-8 md:h-10"
-                title="Bootstrap"
-                src={bootstarpLogo}
-                alt="Bootstrap"
+              <Tooltipx
+                icon={<RiTailwindCssFill size={40} color="#06B6D4" />}
+                title="Tailwind "
               />
-              <img
-                className="h-8 md:h-10"
-                title="Adobe Photoshop"
-                src={photoshopLogo}
-                alt="Adobe Photoshop"
+              <Tooltipx
+                icon={<RiBootstrapFill size={40} color="#7952B3" />}
+                title="BootStrap "
               />
-              <img
-                className="h-8 md:h-10"
-                title="Adobe Illustrator"
-                src={IllustratorLogo}
-                alt="Adobe Illustrator"
+              <Tooltipx
+                icon={<SiAdobephotoshop size={40} color="#31A8FF" />}
+                title="PhotoShop "
               />
-              <img
-                className="h-8 md:h-10"
-                title="CSS"
-                src={cssLogo}
-                alt="CSS"
+              <Tooltipx
+                icon={<SiAdobeillustrator size={40} color="#FF9A00" />}
+                title="Illustrator "
               />
-              <img
-                className="h-8 md:h-10"
-                title="Figma"
-                src={figmaLogo}
-                alt="Figma"
+              <Tooltipx
+                icon={<IoLogoCss3 size={40} color="#1572B6" />}
+                title="CSS "
               />
-              <img
-                className="h-8 md:h-10"
-                title="Framer Motion"
-                src={framerLogo}
-                alt="Framer Motion"
+              <Tooltipx
+                icon={<FaFigma size={40} color="#F24E1E" />}
+                title="Figma "
               />
-              <img
-                className="h-8 md:h-10"
-                title="GSAP"
-                src={gsapLogo}
-                alt="GSAP"
+              <Tooltipx
+                icon={<FiFramer size={40} color="#0055FF" />}
+                title="FramerMotion "
               />
-              <img
-                className="h-8 md:h-10"
-                title="JQuery"
-                src={jqueryLogo}
-                alt="JQuery"
+              <Tooltipx
+                icon={<MdAnimation size={40} color="#66DEB1" />}
+                title="GSAP "
               />
-              <img
-                className="h-8 md:h-10"
-                title="Shadcn Ui"
-                src={shadcnLogo}
-                alt="Shadcn Ui"
+              <Tooltipx
+                icon={<SiJquery size={40} color="#0769AD" />}
+                title="JQuery "
               />
-              <img
-                className="h-8 md:h-10"
-                title="Redux"
-                src={reduxLogo}
-                alt="Redux"
+              <Tooltipx
+                icon={<SiShadcnui size={40} color="#000000" />}
+                title="ShadUI "
               />
             </div>
           </div>
@@ -228,57 +234,68 @@ const Home = () => {
             <h1 className="text-xl md:text-3xl font-extrabold text-center">
               BACK-END
             </h1>
-            <div className="flex mt-8 flex-wrap gap-5">
-              <img
-                className="h-8 md:h-10"
-                title="Node Js"
-                src={nodeJs}
-                alt="Node Js"
+            <div className="flex mt-8 flex-wrap gap-5 justify-center">
+              <Tooltipx
+                icon={<FaNodeJs size={40} color="#5FA04E" />}
+                title="NodeJs"
               />
-              <img className="h-8 md:h-10" title="Ejs" src={ejs} alt="Ejs" />
-              <img
-                className="h-8 md:h-10"
-                title="Express Js"
-                src={expressJs}
-                alt="Express Js"
+              <Tooltipx
+                icon={
+                  <svg
+                    role="img"
+                    viewBox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg"
+                    height={40}
+                    width={40}
+                    fill="#B4CA65"
+                  >
+                    <title>EJS</title>
+                    <path d="m8.291 5.696-1.258-1.58 1.668-1.55 1.258 1.58-1.668 1.55zm2.34 2.048.205-1.55-5.412-.03-.204 1.55 3.945.022L7.8 17.852l-.839.77-.405-.004c.385.403.803.81 1.236 1.214l1.378-1.265 1.458-10.823h.004zm-6.757 7.254s2.925-.468 3.54.38c0 0-1.756-2.925-4.184-2.925 0-.074-.098-1.353 5.146-2.609l.206-1.53c-8.346 1.108-14.287 4.322.265 13.12 0 0-5.675-4.71-4.973-6.436zM13 6.223 11.216 7.86l-.526 4.037 1.316 1.638 5.675.058.556.702-.38 2.633-.713.685-.018.017h2.193l.556-4.037-1.345-1.638-5.646-.058-.556-.702.351-2.633.731-.702 5.032.058.556.673-.176 1.229h1.55l.264-1.902-1.317-1.667-6.318-.03zm2.882 11.908.545-.523-4.305-.035-.965-1.17-1.258 1.17 1.346 1.667 6.318.03 1.22-1.139h-2.901zM13.13 8.965a103.16 103.16 0 0 1 4.624-.554l-4.145-.048-.457.44-.022.162zm8.026-1.156-.025.179-.018.132c.92-.07 1.87-.139 2.887-.2 0 0-1.113-.067-2.844-.11zM1.914 18.392l1.404 1.784 2.66.02c-1.292-.875-2.393-1.708-3.296-2.499l-.768.695z" />
+                  </svg>
+                }
+                title="EJS"
               />
-              <img
-                className="h-8 md:h-10"
-                title="Next js"
-                src={nextJs}
-                alt="Next Js"
+              <Tooltipx
+                icon={<SiExpress size={40} color="#000000" />}
+                title="ExpressJs"
               />
-              <img
-                className="h-8 md:h-10"
-                title="passport"
-                src={passport}
-                alt="passport"
+              <Tooltipx
+                icon={<RiNextjsFill size={40} color="#000000" />}
+                title="NextJs"
               />
-              <img className="h-8 md:h-10" title="Api" src={api} alt="Api" />
-              <img
-                className="h-8 md:h-10"
-                title="PostgreSql"
-                src={postgreSql}
-                alt="postgreSql"
+              <Tooltipx
+                icon={<SiPassport size={40} color="#34E27A" />}
+                title="PassportJs"
               />
-              <img className="h-8 md:h-10" title="CSS" src={npm} alt="CSS" />
-              <img
-                className="h-8 md:h-10"
-                title="MongoDb"
-                src={mongoDb}
-                alt="MongoDb"
+
+              <TbApi size={40} color="000000" />
+              <Tooltipx
+                icon={<BiLogoPostgresql size={40} color="#4169E1" />}
+                title="PostgreSQL"
               />
-              <img
-                className="h-8 md:h-10"
-                title="Firebase"
-                src={firebase}
-                alt="Firebase"
+              <Tooltipx
+                icon={<SiNpm size={40} color="#CB3837" />}
+                title="NPM"
               />
-              <img
-                className="h-8 md:h-10"
-                title="oauth"
-                src={oAuth}
-                alt="Oauth"
+              <Tooltipx
+                icon={<SiMongodb size={40} color="#47A248" />}
+                title="MongoDB"
+              />
+              <Tooltipx
+                icon={<SiMongoose size={40} color="#880000" />}
+                title="Mongoose"
+              />
+              <Tooltipx
+                icon={<SiGooglecloud size={40} color="#4285F4" />}
+                title="GoogleCloud"
+              />
+              <Tooltipx
+                icon={<TbBrandOauth size={40} color="#EB5424" />}
+                title="OAuth"
+              />
+              <Tooltipx
+                icon={<SiAppwrite size={40} color="#FD366E" />}
+                title="Appwrite"
               />
             </div>
           </div>
@@ -287,43 +304,43 @@ const Home = () => {
             <h1 className="text-xl md:text-3xl font-extrabold text-center">
               TOOLS
             </h1>
-            <div className="flex mt-8 flex-wrap gap-5">
-              <img
-                className="h-8 md:h-10"
-                title="vs Code"
-                src={vsCode}
-                alt="vs Code"
+            <div className="flex mt-8 flex-wrap gap-5 justify-center">
+              <Tooltipx
+                icon={<VscVscode size={40} color="#2F80ED" />}
+                title="VsCode"
               />
-              <img className="h-8 md:h-10" title="Git" src={Git} alt="Git" />
-              <img
-                className="h-8 md:h-10"
+              <Tooltipx
+                icon={<FaGitAlt size={40} color="#F05032" />}
+                title="GitBash"
+              />
+              <Tooltipx
+                icon={<SiPostman size={40} color="#FF6C37" />}
                 title="Postman"
-                src={Postman}
-                alt="Postman"
               />
-              <img
-                className="h-8 md:h-10"
-                title="Github"
-                src={githubLogo}
-                alt="Github"
+              <Tooltipx
+                icon={<FaGithub size={40} color="#181717" />}
+                title="GitHub"
               />
-              <img
-                className="h-8 md:h-10"
-                title="Bootstrap"
-                src={bootstarpLogo}
-                alt="Bootstrap"
+              <Tooltipx
+                icon={<SiNetlify size={40} color="#00C7B7" />}
+                title="Netlify"
               />
-              <img
-                className="h-8 md:h-10"
-                title="Adobe Photoshop"
-                src={photoshopLogo}
-                alt="Adobe Photoshop"
+              <Tooltipx
+                icon={<SiObsidian size={40} color="#7C3AED" />}
+                title="Obsidian"
               />
-              <img
-                className="h-8 md:h-10"
-                title="Neo Vim"
-                src={Neovim}
-                alt="Neo Vim"
+
+              <Tooltipx
+                icon={<RiNotionFill size={40} color="#00000" />}
+                title="Notion"
+              />
+              <Tooltipx
+                icon={<IoLogoVercel size={40} color="#000000" />}
+                title="Vercel"
+              />
+              <Tooltipx
+                icon={<FaLinux size={40} color="#FCC624" />}
+                title="Linux"
               />
             </div>
           </div>
@@ -331,49 +348,38 @@ const Home = () => {
             <h1 className="text-xl md:text-3xl font-extrabold text-center">
               LANGUAGES
             </h1>
-            <div className="flex mt-8 flex-wrap gap-5">
-              <img
-                className="h-8 md:h-10"
-                title="Python"
-                src={Python}
-                alt="Python"
+            <div className="flex mt-8 flex-wrap gap-5 justify-center">
+              {/* <SiGnubash size={40} color="#00000" /> */}
+              <Tooltipx
+                icon={<SiGnubash size={40} color="#00000" />}
+                title="BashScript"
               />
-              <img
-                className="h-8 md:h-10"
-                title="Bash"
-                src={bashScript}
-                alt="Bash"
+              <Tooltipx
+                icon={<FaJava size={40} color="ED8B00" />}
+                title="Java"
               />
-              <img className="h-8 md:h-10" title="java" src={Java} alt="java" />
-              <img
-                className="h-8 md:h-10"
+              <Tooltipx
+                icon={<FaJs size={40} color="#F7DF1E" />}
+                title="JavaScript"
+              />
+              <Tooltipx
+                icon={<TbBrandCpp size={40} color="#00599C" />}
                 title="C++"
-                src={Cplusplus}
-                alt="C++"
               />
-              <img
-                className="h-8 md:h-10"
-                title="R programming"
-                src={R}
-                alt="R programming"
+
+              <Tooltipx
+                icon={<IoTerminal size={40} color="#00000" />}
+                title="Terminal"
               />
-              <img
-                className="h-8 md:h-10"
-                title="C Programming"
-                src={C}
-                alt="C Programming"
-              />
-              <img
-                className="h-8 md:h-10"
-                title="Javascript"
-                src={Javascript}
-                alt="Javascript"
+              <Tooltipx
+                icon={<DiPython size={40} color="#3776AB" />}
+                title="Python"
               />
             </div>
           </div>
         </div>
-      </div>
-    </div>
+      </motion.div>
+    </motion.div>
   );
 };
 
