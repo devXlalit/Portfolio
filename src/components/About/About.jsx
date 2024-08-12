@@ -1,5 +1,5 @@
 import proFile from "../../assets/final_image-removebg-preview.png";
-import resume from "../../assets/Pagare.Lalit.FullStackWeb.Dev.Resume.pdf";
+import resume from "../../assets/Pagare_Lalit_Full_Stack_developer_Resume.pdf";
 import { RiDownloadLine } from "@remixicon/react";
 import { motion, AnimatePresence } from "framer-motion";
 const About = () => {
