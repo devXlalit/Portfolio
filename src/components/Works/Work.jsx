@@ -2,6 +2,7 @@ import proGif1 from "../../assets/Project-gif/ViteReact-GoogleChrome2024-04-2503
 import proGif7 from "../../assets/Project-gif/comingsoon-ezgif.com-optimize.gif";
 import proGif8 from "../../assets/Project-gif/proiamg.gif";
 import proGif9 from "../../assets/Project-gif/weblogsWorkV-ezgif.com-video-to-gif-converter.gif";
+import proGifpr from "../../assets/Project-gif/ScreencastFrom2025-01-1923-55-32-ezgif.com-video-to-gif-converter.gif";
 import { RiGitRepositoryLine, RiGithubLine, RiLink } from "@remixicon/react";
 import { motion } from "framer-motion";
 
@@ -55,12 +56,11 @@ const Work = () => {
             </motion.b>
             In this project, I built a React.js application from the ground up,
             utilizing third-party libraries like React Router to enhance
-            efficiency. I also deployed the finished project live on the
-            internet. This project provided valuable insights into corporate
-            work environments. It involved collaboration through Figma for
-            design purposes, social meetings, group discussions, project
-            management tools, and teamwork. The project involved building a web
-            application for.
+            efficiency. I also deployed the finished project live. This project
+            provided valuable insights into corporate work environments. It
+            involved collaboration through Figma for design purposes, social
+            meetings, group discussions, project management, and teamwork. The
+            project involved building a web application for.
             <a
               href="https://theblunt.media/"
               target="__blank"
@@ -97,28 +97,42 @@ const Work = () => {
             id="radial-bar2"
             className="h-2 md:h-4 w-12 md:w-20 bg-[#FF2E63] rounded-full"
           ></motion.div>
-          <motion.div
-            initial={{ opacity: 0.1 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 0.5, duration: 0.8 }}
-            className="mt-10 md:w-80 p-4 md:p-6 shadow-lg shadow-zinc-500/50 rounded-2xl"
-          >
-            <h2 className="md:text-xl font-[gilroy-medium] ">
-              <b>useApi (React Hook) - </b>
-              This React API hook makes API fetching easier. It takes a URL as a
-              parameter and returns three values: response, error, and loading.
-              It can also be customized for more efficient use.
-            </h2>
-            <button className="">
-              <a
-                href="https://github.com/devXlalit/useApi-Hook"
-                target="__blank"
-                className="font-extrabold flex items-center gap-1 hover:text-[#252A34] hover:bg-[#EAEAEA] hover:scale-105 duration-300  bg-[#252A34] text-[#EAEAEA] text-center  mt-3 py-2 px-4 rounded-full"
-              >
-                <RiGitRepositoryLine /> Visit
-              </a>
-            </button>
-          </motion.div>
+          <div className="flex gap-5 flex-wrap">
+            <motion.div
+              initial={{ opacity: 0.1 }}
+              animate={{ opacity: 1 }}
+              transition={{ delay: 0.5, duration: 0.8 }}
+              className="mt-10 md:w-80 p-4 md:p-6 shadow-lg shadow-zinc-500/50 rounded-2xl"
+            >
+              <span className="text-green-400 ring-1 ring-green-400 px-3 py-2 rounded-md">
+                Paid
+              </span>
+              <h2 className="md:text-xl my-4 font-[gilroy-medium] ">
+                <b>BuildAlgo - Trading Strategy builder</b>
+              </h2>
+              <p className="md:text-xl font-[gilroy-medium]">
+                Worked for a freelence agency as a UI/UX developer and designer
+                contributed in React, ShadUI, Radix ui,{" "}
+                <a
+                  className="text-blue-500 underline"
+                  href="https://posthog.com/"
+                >
+                  Posthog,
+                </a>{" "}
+                Typescript, Nextjs, Tailwind, Git & Github for version
+                controling.
+              </p>
+              <button className="">
+                <a
+                  href="https://github.com/devXlalit/Project-X.git"
+                  target="__blank"
+                  className="font-extrabold flex items-center gap-1 hover:text-[#252A34] hover:bg-[#EAEAEA] hover:scale-105 duration-300  bg-[#252A34] text-[#EAEAEA] text-center  mt-3 py-2 px-4 rounded-full"
+                >
+                  <RiGitRepositoryLine /> Visit
+                </a>
+              </button>
+            </motion.div>
+          </div>
         </div>
         <div className="h-full mt-16" id="recent-pro">
           <h2 className="font-extrabold text-2xl md:text-4xl leading-none">
@@ -130,13 +144,21 @@ const Work = () => {
             data-scroll
             data-scroll-speed="2"
           ></div>
+
           <div className="flex py-10 flex-wrap gap-7 md:px-6" id="rec-pro">
             <ProjectCard
+              image={proGifpr}
+              wlink="https://www.projectly.dev"
+              title="Projectly - Learn programming by creating next level projects."
+              desc="Nextjs, Typescript, nodemailer, Razorpay payment gateway, Next auth, GitHub authentication (OAuth), MongoDB, Mongoose, Appwrite, Tailwind Css, Framer motion, Node js, Express js, Obsedian, Figma. "
+              order="flex-row-reverse"
+            />
+            <ProjectCard
               image={proGif9}
-              glink="https://github.com/devXlalit/Project_weblogs.git"
+              glink="https://github.com/devXlalit/Project_weblogs"
               wlink="https://weblogs-five.vercel.app/"
               title="Weblogs - Free and open source blogging website."
-              desc="Nextjs (Frontend + Backend), Next auth, Google authantication (OAuth), MongoDB, Mongoose, Tailwind Css, Framer motion, Node js, Express js, Obsedian, Figma.  "
+              desc="Nextjs , Next auth, Google authantication (OAuth), MongoDB, Mongoose, Tailwind Css, Framer motion, Node js, Express js, Obsedian, Figma.  "
             />
             <ProjectCard
               image={proGif1}

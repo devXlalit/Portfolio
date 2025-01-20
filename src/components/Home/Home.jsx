@@ -5,17 +5,17 @@ import {
   RiNotionFill,
   RiTailwindCssFill,
 } from "@remixicon/react";
+import { SiTypescript } from "react-icons/si";
+import resume from "../../assets/Pagare_Lalit_Full_Stack_developer_Resume.pdf";
 import { RiLinkedinBoxFill } from "@remixicon/react";
-import { RiStackOverflowFill } from "@remixicon/react";
-import { RiInstagramFill } from "@remixicon/react";
 import { RiScrollToBottomLine } from "@remixicon/react";
-
+import { FaTwitter } from "react-icons/fa";
 import "animate.css";
 import { Link } from "react-router-dom";
 import TextChanger from "../../TextChanger";
 import Tooltipx from "../Tooltipx";
-
-import { color, delay, motion } from "framer-motion";
+import { PiReadCvLogoBold } from "react-icons/pi";
+import { motion } from "framer-motion";
 import {
   FaFigma,
   FaGitAlt,
@@ -86,6 +86,11 @@ const Home = () => {
           DEVELOPER
         </motion.span>
       </motion.h1>
+      <img
+        className="hidden md:block absolute top-40 rounded-full h-60 ring-4 ring-[#FF2E63]  shadow-[#FF2E63] shadow-lg right-40"
+        src="https://pbs.twimg.com/profile_images/1833573099591372804/MoJ1U5fI_400x400.jpg"
+        alt="avatar image"
+      />
       <motion.div
         initial={{ opacity: 0, x: -50 }}
         animate={{ opacity: 1, x: 0 }}
@@ -103,19 +108,19 @@ const Home = () => {
               className="hover:text-blue-500 text-[#252A34] transition-all duration-300 cursor-pointer"
             />
           </a>
-          <a href="https://www.instagram.com/lalit_devl/" target="_blank">
-            <RiInstagramFill
-              size={42}
-              className="hover:text-pink-500 text-[#252A34] transition-all duration-300 cursor-pointer"
+          <a href="https://x.com/devXlalit" target="_blank">
+            <FaTwitter
+              size={38}
+              className="hover:text-blue-500 text-[#252A34] transition-all duration-300 cursor-pointer"
             />
           </a>
           <a
-            href="https://stackoverflow.com/users/23515297/lalit-pagare"
+            href="https://drive.google.com/file/d/1i52wfNrEaqqN1Aj-LKEMiWUH3daOQ9lY/view?usp=sharing"
             target="_blank"
           >
-            <RiStackOverflowFill
+            <PiReadCvLogoBold
               size={42}
-              className="hover:text-amber-600 text-[#252A34] transition-all duration-300 cursor-pointer"
+              className="hover:opacity-50 text-[#252A34] transition-all duration-300 cursor-pointer"
             />
           </a>
           <a href="https://github.com/devXlalit" target="_blank">
@@ -145,7 +150,7 @@ const Home = () => {
         >
           <RiScrollToBottomLine
             size={30}
-            className="animate__animated animate__shakeY infinite animate__delay-4s animate__slower animate__infinite absolute hidden lg:block md:right-80 md:bottom-14"
+            className="animate__animated animate__shakeY infinite animate__delay-4s animate__slower animate__infinite absolute hidden lg:block md:right-20 md:top-64"
           />
         </motion.span>
       </motion.div>
@@ -185,6 +190,10 @@ const Home = () => {
                 title="JavaScript "
               />
               <Tooltipx
+                icon={<SiTypescript size={40} color="#007acc" />}
+                title="Typescript"
+              />
+              <Tooltipx
                 icon={<FaHtml5 size={40} color="#E34F26" />}
                 title="HTML "
               />
@@ -195,14 +204,6 @@ const Home = () => {
               <Tooltipx
                 icon={<RiBootstrapFill size={40} color="#7952B3" />}
                 title="BootStrap "
-              />
-              <Tooltipx
-                icon={<SiAdobephotoshop size={40} color="#31A8FF" />}
-                title="PhotoShop "
-              />
-              <Tooltipx
-                icon={<SiAdobeillustrator size={40} color="#FF9A00" />}
-                title="Illustrator "
               />
               <Tooltipx
                 icon={<IoLogoCss3 size={40} color="#1572B6" />}
@@ -342,41 +343,18 @@ const Home = () => {
                 icon={<FaLinux size={40} color="#FCC624" />}
                 title="Linux"
               />
-            </div>
-          </div>
-          <div className="skills-card-sm drop-shadow-2xl rounded-3xl p-6 md:w-96 shadow-lg md:p-12">
-            <h1 className="text-xl md:text-3xl font-extrabold text-center">
-              LANGUAGES
-            </h1>
-            <div className="flex mt-8 flex-wrap gap-5 justify-center">
-              {/* <SiGnubash size={40} color="#00000" /> */}
               <Tooltipx
                 icon={<SiGnubash size={40} color="#00000" />}
                 title="BashScript"
               />
-              <Tooltipx
-                icon={<FaJava size={40} color="ED8B00" />}
-                title="Java"
-              />
-              <Tooltipx
-                icon={<FaJs size={40} color="#F7DF1E" />}
-                title="JavaScript"
-              />
-              <Tooltipx
-                icon={<TbBrandCpp size={40} color="#00599C" />}
-                title="C++"
-              />
-
-              <Tooltipx
-                icon={<IoTerminal size={40} color="#00000" />}
-                title="Terminal"
-              />
-              <Tooltipx
-                icon={<DiPython size={40} color="#3776AB" />}
-                title="Python"
-              />
             </div>
           </div>
+          {/* <div className="skills-card-sm drop-shadow-2xl rounded-3xl p-6 md:w-96 shadow-lg md:p-12">
+            <h1 className="text-xl md:text-3xl font-extrabold text-center">
+              LANGUAGES
+            </h1>
+            <div className="flex mt-8 flex-wrap gap-5 justify-center"></div>
+          </div> */}
         </div>
       </motion.div>
     </motion.div>

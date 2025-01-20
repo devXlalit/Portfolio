@@ -8,7 +8,7 @@ const Navbar = () => {
   const [showMenu, setShowmenu] = useState(true);
   return (
     <nav
-      className={`flex flex-wrap justify-between font-[gilroy-regular] font-medium`}
+      className={`flex flex-wrap justify-between font-[gilroy-regular] font-bold`}
       data-scroll
     >
       <span>
@@ -49,14 +49,14 @@ const Navbar = () => {
           id="/about"
           className="text-xl transition ease delay-150  p-2 md:p-0"
         >
-          <NavLink
+          {/* <NavLink
             to="/about"
             className={({ isActive }) =>
               `${isActive && "border-b-4 border-[#08D9D6] "}`
             }
           >
             ABOUT
-          </NavLink>
+          </NavLink> */}
         </li>
       </ul>
       {showMenu ? (

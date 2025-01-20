@@ -24,10 +24,10 @@ const router = createHashRouter([
         path: "work",
         element: <Work />,
       },
-      {
-        path: "about",
-        element: <About />,
-      },
+      // {
+      //   path: "about",
+      //   element: <About />,
+      // },
     ],
   },
 ]);
