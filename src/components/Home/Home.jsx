@@ -178,6 +178,14 @@ const Home = () => {
 
             <div className="flex mt-8 flex-wrap gap-5 justify-center">
               <Tooltipx
+                icon={<SiAdobephotoshop size={40} color="#1864ab" />}
+                title="Photoshop"
+              />
+              <Tooltipx
+                icon={<SiAdobeillustrator size={40} color="#FF9A00" />}
+                title="Illustrator"
+              />
+              <Tooltipx
                 icon={<FaReact size={40} color="#61DAFB" />}
                 title="React "
               />
