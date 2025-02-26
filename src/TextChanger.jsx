@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { delay, motion } from "framer-motion";
+import { motion } from "framer-motion";
 const TextChanger = () => {
   const texts = ["FULL STACK  ", "MERN STACK  ", "FRONT END  ", "BACK END  "];
 

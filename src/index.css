@@ -14,3 +14,24 @@
   font-family: gilroy-medium;
   src: url(./assets/fonts/Gilroy-Medium.ttf);
 }
+
+/* Heatmap Color Styling */
+.color-empty {
+  fill: #161b22; /* GitHub background */
+}
+
+.color-scale-1 {
+  fill: #8ce99a; /* Light green */
+}
+
+.color-scale-2 {
+  fill: #69db7c; /* Medium green */
+}
+
+.color-scale-3 {
+  fill: #40c057; /* Darker green */
+}
+
+.color-scale-4 {
+  fill: #2f9e44; /* Brightest green */
+}

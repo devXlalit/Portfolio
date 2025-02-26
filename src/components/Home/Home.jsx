@@ -6,9 +6,7 @@ import {
   RiTailwindCssFill,
 } from "@remixicon/react";
 import { SiTypescript } from "react-icons/si";
-import resume from "../../assets/Pagare_Lalit_Full_Stack_developer_Resume.pdf";
 import { RiLinkedinBoxFill } from "@remixicon/react";
-import { RiScrollToBottomLine } from "@remixicon/react";
 import { FaTwitter } from "react-icons/fa";
 import "animate.css";
 import { Link } from "react-router-dom";
@@ -16,12 +14,13 @@ import TextChanger from "../../TextChanger";
 import Tooltipx from "../Tooltipx";
 import { PiReadCvLogoBold } from "react-icons/pi";
 import { motion } from "framer-motion";
+import GitHubHeatmap from "../GitHubHeatmap";
+import avatarImg from "../../assets/IMG_20250128_041115_816-removebg-preview (3).png";
 import {
   FaFigma,
   FaGitAlt,
   FaGithub,
   FaHtml5,
-  FaJava,
   FaJs,
   FaLinux,
   FaNodeJs,
@@ -48,11 +47,10 @@ import {
 import { IoLogoCss3 } from "react-icons/io";
 import { FiFramer } from "react-icons/fi";
 import { MdAnimation } from "react-icons/md";
-import { TbApi, TbBrandCpp, TbBrandOauth } from "react-icons/tb";
+import { TbApi, TbBrandOauth } from "react-icons/tb";
 import { BiLogoPostgresql } from "react-icons/bi";
-import { IoLogoVercel, IoTerminal } from "react-icons/io5";
+import { IoLogoVercel } from "react-icons/io5";
 import { VscVscode } from "react-icons/vsc";
-import { DiPython } from "react-icons/di";
 
 const Home = () => {
   return (
@@ -60,6 +58,15 @@ const Home = () => {
       className="h-auto w-full pt-12 py-0 md:p-12  font-extrabold "
       id="container"
     >
+      <span className="flex justify-center">
+        <img
+          className=" mb-4 md:block md:absolute md:top-36 rounded-full h-40 md:h-60 shadow-[rgba(50,_50,_105,_0.15)_0px_2px_5px_0px,_rgba(0,_0,_0,_0.05)_0px_1px_1px_0px] md:right-40"
+          src={avatarImg}
+          referrerPolicy="no-referrer"
+          alt="avatar image"
+        />
+      </span>
+
       <motion.h1
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
@@ -86,11 +93,7 @@ const Home = () => {
           DEVELOPER
         </motion.span>
       </motion.h1>
-      <img
-        className="hidden md:block absolute top-40 rounded-full h-60 ring-4 ring-[#FF2E63]  shadow-[#FF2E63] shadow-lg right-40"
-        src="https://pbs.twimg.com/profile_images/1833573099591372804/MoJ1U5fI_400x400.jpg"
-        alt="avatar image"
-      />
+      <GitHubHeatmap />
       <motion.div
         initial={{ opacity: 0, x: -50 }}
         animate={{ opacity: 1, x: 0 }}
@@ -100,6 +103,7 @@ const Home = () => {
       >
         <div className="flex gap-5 pt-10" id="social">
           <a
+            title="LinkedIn"
             href="https://www.linkedin.com/in/lalit-pagare-b4926b228"
             target="_blank"
           >
@@ -108,14 +112,15 @@ const Home = () => {
               className="hover:text-blue-500 text-[#252A34] transition-all duration-300 cursor-pointer"
             />
           </a>
-          <a href="https://x.com/devXlalit" target="_blank">
+          <a title="Twitter (X)" href="https://x.com/devXlalit" target="_blank">
             <FaTwitter
               size={38}
               className="hover:text-blue-500 text-[#252A34] transition-all duration-300 cursor-pointer"
             />
           </a>
           <a
-            href="https://drive.google.com/file/d/1i52wfNrEaqqN1Aj-LKEMiWUH3daOQ9lY/view?usp=sharing"
+            title="Resume"
+            href="https://drive.google.com/file/d/16nrRXQVi2qXJh6-TCAeB66Vhec6nEbKm/view?usp=sharing"
             target="_blank"
           >
             <PiReadCvLogoBold
@@ -123,7 +128,7 @@ const Home = () => {
               className="hover:opacity-50 text-[#252A34] transition-all duration-300 cursor-pointer"
             />
           </a>
-          <a href="https://github.com/devXlalit" target="_blank">
+          <a title="GitHub" href="https://github.com/devXlalit" target="_blank">
             <RiGithubFill
               size={42}
               className="hover:text-purple-500 text-[#252A34] transition-all duration-300 cursor-pointer"
@@ -138,22 +143,13 @@ const Home = () => {
             damping: 10,
           }}
           id="button"
-          className="text-sm px-6 md:px-12 text-[#EAEAEA] bg-[#252A34] py-3 md:h-12 mt-8 rounded-full hover:bg-[#EAEAEA] hover:text-[#252A34] duration-300"
+          className="text-sm px-6 md:px-10 text-[#EAEAEA] bg-[#252A34] py-3 md:h-12 mt-8 rounded-full hover:bg-[#EAEAEA] hover:text-[#252A34] duration-300"
           //   className="px-14 py-1 mt-8 rounded-full hover:bg-white slide_from_left"
         >
           <Link to="/work">Explore my work...</Link>
         </motion.button>
-        <motion.span
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 2, duration: 0.8 }}
-        >
-          <RiScrollToBottomLine
-            size={30}
-            className="animate__animated animate__shakeY infinite animate__delay-4s animate__slower animate__infinite absolute hidden lg:block md:right-20 md:top-64"
-          />
-        </motion.span>
       </motion.div>
+
       <motion.div layout id="skills" className="pt-36 h-auto">
         <motion.h2
           initial={{ opacity: 0 }}
@@ -170,8 +166,8 @@ const Home = () => {
           id="radial-bar1"
           className="h-2 md:h-4 w-12 md:w-20 bg-[#08D9D6] rounded-full "
         ></motion.div>
-        <div className="mt-12 md:p-12 flex gap-5 flex-wrap justify-center w-full">
-          <div className="skills-card-sm drop-shadow-2xl rounded-3xl p-6 md:w-96 shadow-lg md:p-12">
+        <div className="mt-12  md:p-12 flex gap-5 flex-wrap justify-center w-full">
+          <div className="skills-card-sm drop-shadow-2xl rounded-3xl p-6 md:w-96 shadow-[rgba(50,_50,_105,_0.15)_0px_2px_5px_0px,_rgba(0,_0,_0,_0.05)_0px_1px_1px_0px] md:p-12">
             <h1 className="text-xl md:text-3xl font-extrabold text-center">
               FRONT-END
             </h1>
@@ -239,7 +235,7 @@ const Home = () => {
               />
             </div>
           </div>
-          <div className="skills-card-sm drop-shadow-2xl rounded-3xl p-6 md:w-96 shadow-lg md:p-12">
+          <div className="skills-card-sm drop-shadow-2xl rounded-3xl p-6 md:w-96 shadow-[rgba(50,_50,_105,_0.15)_0px_2px_5px_0px,_rgba(0,_0,_0,_0.05)_0px_1px_1px_0px] md:p-12">
             <h1 className="text-xl md:text-3xl font-extrabold text-center">
               BACK-END
             </h1>
@@ -309,7 +305,7 @@ const Home = () => {
             </div>
           </div>
 
-          <div className="skills-card-sm drop-shadow-2xl rounded-3xl p-6 md:w-96 shadow-lg md:p-12">
+          <div className="skills-card-sm drop-shadow-2xl rounded-3xl p-6 md:w-96 shadow-[rgba(50,_50,_105,_0.15)_0px_2px_5px_0px,_rgba(0,_0,_0,_0.05)_0px_1px_1px_0px] md:p-12">
             <h1 className="text-xl md:text-3xl font-extrabold text-center">
               TOOLS
             </h1>
@@ -357,7 +353,7 @@ const Home = () => {
               />
             </div>
           </div>
-          {/* <div className="skills-card-sm drop-shadow-2xl rounded-3xl p-6 md:w-96 shadow-lg md:p-12">
+          {/* <div className="skills-card-sm drop-shadow-2xl rounded-3xl p-6 md:w-96 shadow-[rgba(50,_50,_105,_0.15)_0px_2px_5px_0px,_rgba(0,_0,_0,_0.05)_0px_1px_1px_0px] md:p-12">
             <h1 className="text-xl md:text-3xl font-extrabold text-center">
               LANGUAGES
             </h1>

@@ -3,6 +3,7 @@ import proGif7 from "../../assets/Project-gif/comingsoon-ezgif.com-optimize.gif"
 import proGif8 from "../../assets/Project-gif/proiamg.gif";
 import proGif9 from "../../assets/Project-gif/weblogsWorkV-ezgif.com-video-to-gif-converter.gif";
 import proGifpr from "../../assets/Project-gif/ScreencastFrom2025-01-1923-55-32-ezgif.com-video-to-gif-converter.gif";
+import proGif0 from "../../assets/Project-gif/ScreencastFrom2025-02-2413-31-53-ezgif.com-video-to-gif-converter.gif";
 import { RiGitRepositoryLine, RiGithubLine, RiLink } from "@remixicon/react";
 import { motion } from "framer-motion";
 
@@ -45,7 +46,7 @@ const Work = () => {
               animate={{ opacity: 1 }}
               transition={{ delay: 2, duration: 1 }}
             >
-              👉I recently completed a freelance web development project for{" "}
+              I recently completed a freelance web development project for{" "}
               <a
                 href="https://qoulomb.com/about/"
                 target="__blank"
@@ -53,29 +54,27 @@ const Work = () => {
               >
                 Quolomb.
               </a>
-            </motion.b>
+            </motion.b>{" "}
             In this project, I built a React.js application from the ground up,
             utilizing third-party libraries like React Router to enhance
             efficiency. I also deployed the finished project live. This project
             provided valuable insights into corporate work environments. It
             involved collaboration through Figma for design purposes, social
             meetings, group discussions, project management, and teamwork. The
-            project involved building a web application for.
+            project involved building a web application for.{" "}
             <a
               href="https://theblunt.media/"
               target="__blank"
               className="text-blue-500 underline"
-            >
-              <b>The Blunt,</b>
-            </a>
-            a social media agency with over 200,000{" "}
+            ></a>
+            <b>The Blunt,</b> a social media agency with over 200,000{" "}
             <a
               href="https://www.youtube.com/@TheBLUNT"
               target="__blank"
               className="text-blue-500 underline"
             >
               <b>subscribers.</b>
-            </a>
+            </a>{" "}
             I'd like to express my gratitude to Quolomb for this fantastic
             opportunity and extend my interest in future collaborations with The
             Blunt.
@@ -102,7 +101,7 @@ const Work = () => {
               initial={{ opacity: 0.1 }}
               animate={{ opacity: 1 }}
               transition={{ delay: 0.5, duration: 0.8 }}
-              className="mt-10 md:w-80 p-4 md:p-6 shadow-lg shadow-zinc-500/50 rounded-2xl"
+              className="mt-10 md:w-80 p-4 md:p-6 shadow-[rgba(50,_50,_105,_0.15)_0px_2px_5px_0px,_rgba(0,_0,_0,_0.05)_0px_1px_1px_0px] shadow-zinc-500/50 rounded-2xl"
             >
               <span className="text-green-400 ring-1 ring-green-400 px-3 py-2 rounded-md">
                 Paid
@@ -151,6 +150,13 @@ const Work = () => {
               wlink="https://www.projectly.dev"
               title="Projectly - Learn programming by creating next level projects."
               desc="Nextjs, Typescript, nodemailer, Razorpay payment gateway, Next auth, GitHub authentication (OAuth), MongoDB, Mongoose, Appwrite, Tailwind Css, Framer motion, Node js, Express js, Obsedian, Figma. "
+            />
+            <ProjectCard
+              image={proGif0}
+              glink="https://github.com/devXlalit/React-ECommerce.git"
+              wlink="https://ecomfrontend-drab.vercel.app/"
+              title="Schuh - Full fleged shoes Ecommerce website."
+              desc="React js, Javascript, Tailwind Css, Node js, Express js, Json webtoken, Cloudinary, MongoDb, Stripe, Razorpay."
               order="flex-row-reverse"
             />
             <ProjectCard
@@ -204,7 +210,12 @@ const ProjectCard = ({ image, title, desc, glink, wlink, order }) => (
     className={`flex md:flex-nowrap flex-wrap justify-items-center items-center gap-10 p-4 ${order} `}
   >
     <div className="flex md:w-3/5" id="project-card">
-      <img id="pr-gif1" className="rounded-2xl " src={image} alt="" />
+      <img
+        id="pr-gif1"
+        className="shadow-[0px_0px_0px_1px_rgba(0,0,0,0.06),0px_1px_1px_-0.5px_rgba(0,0,0,0.06),0px_3px_3px_-1.5px_rgba(0,0,0,0.06),_0px_6px_6px_-3px_rgba(0,0,0,0.06),0px_12px_12px_-6px_rgba(0,0,0,0.06),0px_24px_24px_-12px_rgba(0,0,0,0.06)] rounded-2xl "
+        src={image}
+        alt=""
+      />
     </div>
     <div className="md:w-2/5 flex flex-col justify-center">
       <h1 className="md:text-2xl leading-tight pb-2">{title}</h1>
