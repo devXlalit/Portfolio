@@ -120,7 +120,7 @@ const Home = () => {
           </a>
           <a
             title="Resume"
-            href="https://drive.google.com/file/d/16nrRXQVi2qXJh6-TCAeB66Vhec6nEbKm/view?usp=sharing"
+            href="https://drive.google.com/file/d/15ra8EBsQ7cbfoY3yleDiAKIRSXqtD5jI/view?usp=sharing"
             target="_blank"
           >
             <PiReadCvLogoBold
