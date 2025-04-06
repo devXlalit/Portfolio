@@ -4,19 +4,51 @@ import proGif8 from "../../assets/Project-gif/proiamg.gif";
 import proGif9 from "../../assets/Project-gif/weblogsWorkV-ezgif.com-video-to-gif-converter.gif";
 import proGifpr from "../../assets/Project-gif/ScreencastFrom2025-01-1923-55-32-ezgif.com-video-to-gif-converter.gif";
 import proGif0 from "../../assets/Project-gif/ScreencastFrom2025-02-2413-31-53-ezgif.com-video-to-gif-converter.gif";
-import { RiGitRepositoryLine, RiGithubLine, RiLink } from "@remixicon/react";
+import { RiGithubLine, RiLink } from "@remixicon/react";
 import { motion } from "framer-motion";
+import ExperienceBox from "../ExperienceBox";
+const experienceData = [
+  {
+    JobTitle: "Full Stack Developer",
+    CompanyName: "BuildAlgo - Trading Strategy Builder",
+    WebsiteLink: "https://buildalgos.com/",
+    Date: "Dec 2024 - Jan 2025",
+    ListItems: [
+      "Tech Stack: React.js, Next.js, TypeScript, Tailwind CSS, Shadcn UI, Radix UI, PostHog, Recharts.",
+      "Contributed to BuildAlgo (trading strategy builder) with Git/GitHub version control as a remote full-stack developer.",
+      "Implemented user event capture and user CTR analytics with Posthog and boosted company analytics by 40% and user revisit by 50%.",
+      "Collaborated with the team and increased website overall performance by 40%. Resolved website bugs and unnecessary API calls.",
+    ],
+  },
+  {
+    JobTitle: "Web Developer & Project Manager",
+    CompanyName: "Futuristic Coding Academy",
+    WebsiteLink: "https://futuristiccodingacademy.com/",
+    Date: "May 2023 - Aug 2024",
+    ListItems: [
+      "Tech Stack: React.js, JavaScript, Razorpay, Tailwind CSS.",
+      "Increased Boot Camp Registrations by 70% Designed and developed a landing page that significantly boosted offline students.",
+      "Improved Website Traffic by 40% Optimized website performance, resulting in a revenue increase of ₹70,000 from boot camp.",
+      "Streamlined Development Workflows Delivered landing pages 5X faster by leveraging Git/GitHub and resolving critical bugs",
+    ],
+  },
+  {
+    JobTitle: "MERN Stack Developer & Project Manager",
+    CompanyName: "Qoulomb - Content writing and marketing agency",
+    WebsiteLink: "https://qoulomb.com/",
+    Date: "Oct 2023 - Dec 2023",
+    ListItems: [
+      "Tech Stack: React.js, JavaScript, Bootstrap, MongoDB, Node.js, Express.js.",
+      "Enhanced Online Presence by 20% and transformed Figma designs into a fully functional web application for The Blunt, improving their online presence and online attention.",
+    ],
+  },
+];
 
 const Work = () => {
   return (
     <div>
       <div id="experience" className="h-auto w-full pt-12 py-0 md:p-12 ">
-        <motion.h1
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 1, duration: 0.8 }}
-          className="font-extrabold text-2xl md:text-4xl leading-none "
-        >
+        <motion.h1 className="font-extrabold text-2xl md:text-4xl leading-none ">
           WORK & EXPERIENCE
         </motion.h1>
         <motion.div
@@ -26,111 +58,19 @@ const Work = () => {
           id="radial-bar1"
           className="h-2 md:h-4 w-12 md:w-20 bg-[#08D9D6] rounded-full "
         ></motion.div>
-        <div data-scroll-direction="right">
-          <motion.h2
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 1, duration: 0.8 }}
-            className="pt-8 text-xl leading-none md:text-3xl font-extrabold"
-          >
-            Freelance at Quolomb, Vijay Nagar (Indore)
-          </motion.h2>
-          <motion.p
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 1, duration: 0.8 }}
-            className="pt-6 pb-4 text-sm md:text-lg font-[gilroy-medium]"
-          >
-            <motion.b
-              initial={{ opacity: 0.4 }}
-              animate={{ opacity: 1 }}
-              transition={{ delay: 2, duration: 1 }}
-            >
-              I recently completed a freelance web development project for{" "}
-              <a
-                href="https://qoulomb.com/about/"
-                target="__blank"
-                className="text-blue-500 underline"
-              >
-                Quolomb.
-              </a>
-            </motion.b>{" "}
-            In this project, I built a React.js application from the ground up,
-            utilizing third-party libraries like React Router to enhance
-            efficiency. I also deployed the finished project live. This project
-            provided valuable insights into corporate work environments. It
-            involved collaboration through Figma for design purposes, social
-            meetings, group discussions, project management, and teamwork. The
-            project involved building a web application for.{" "}
-            <a
-              href="https://theblunt.media/"
-              target="__blank"
-              className="text-blue-500 underline"
-            ></a>
-            <b>The Blunt,</b> a social media agency with over 200,000{" "}
-            <a
-              href="https://www.youtube.com/@TheBLUNT"
-              target="__blank"
-              className="text-blue-500 underline"
-            >
-              <b>subscribers.</b>
-            </a>{" "}
-            I'd like to express my gratitude to Quolomb for this fantastic
-            opportunity and extend my interest in future collaborations with The
-            Blunt.
-          </motion.p>
-        </div>
-        <div>
-          <motion.h1
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 1, duration: 0.8 }}
-            className="font-extrabold text-2xl md:text-4xl leading-none pt-16 "
-          >
-            CONTRIBUTIONS
-          </motion.h1>
-          <motion.div
-            initial={{ opacity: 0, width: "0%" }}
-            animate={{ opacity: 1, width: "10%" }}
-            transition={{ delay: 1, duration: 0.8 }}
-            id="radial-bar2"
-            className="h-2 md:h-4 w-12 md:w-20 bg-[#FF2E63] rounded-full"
-          ></motion.div>
-          <div className="flex gap-5 flex-wrap">
-            <motion.div
-              initial={{ opacity: 0.1 }}
-              animate={{ opacity: 1 }}
-              transition={{ delay: 0.5, duration: 0.8 }}
-              className="mt-10 md:w-80 p-4 md:p-6 shadow-[rgba(50,_50,_105,_0.15)_0px_2px_5px_0px,_rgba(0,_0,_0,_0.05)_0px_1px_1px_0px] shadow-zinc-500/50 rounded-2xl"
-            >
-              <span className="text-green-400 ring-1 ring-green-400 px-3 py-2 rounded-md">
-                Paid
-              </span>
-              <h2 className="md:text-xl my-4 font-[gilroy-medium] ">
-                <b>BuildAlgo - Trading Strategy builder</b>
-              </h2>
-              <p className="md:text-xl font-[gilroy-medium]">
-                Worked for a freelence agency as a UI/UX developer and designer
-                contributed in React, ShadUI, Radix ui,{" "}
-                <a
-                  className="text-blue-500 underline"
-                  href="https://posthog.com/"
-                >
-                  Posthog,
-                </a>{" "}
-                Typescript, Nextjs, Tailwind, Git & Github for version
-                controling.
-              </p>
-              <button className="">
-                <a
-                  href="https://github.com/devXlalit/Project-X.git"
-                  target="__blank"
-                  className="font-extrabold flex items-center gap-1 hover:text-[#252A34] hover:bg-[#EAEAEA] hover:scale-105 duration-300  bg-[#252A34] text-[#EAEAEA] text-center  mt-3 py-2 px-4 rounded-full"
-                >
-                  <RiGitRepositoryLine /> Visit
-                </a>
-              </button>
-            </motion.div>
+
+        <div className="flex">
+          <div className="">
+            {experienceData.map((item, index) => (
+              <ExperienceBox
+                key={index}
+                JobTitle={item.JobTitle}
+                CompanyName={item.CompanyName}
+                WebsiteLink={item.WebsiteLink}
+                Date={item.Date}
+                ListItems={item.ListItems}
+              />
+            ))}
           </div>
         </div>
         <div className="h-full mt-16" id="recent-pro">
