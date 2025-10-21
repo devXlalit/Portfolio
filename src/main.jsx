@@ -9,7 +9,6 @@ import {
 import App from "./App.jsx";
 import Home from "./components/Home/Home.jsx";
 import Work from "./components/Works/Work.jsx";
-import About from "./components/About/About.jsx";
 
 const router = createHashRouter([
   {
@@ -24,15 +23,14 @@ const router = createHashRouter([
         path: "work",
         element: <Work />,
       },
-      // {
-      //   path: "about",
-      //   element: <About />,
-      // },
     ],
   },
 ]);
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
     <RouterProvider router={router} />
+    <p className="text-center py-2 text-xs font-[gilroy-medium] opacity-50">
+      Last Updated - Oct 2025
+    </p>
   </React.StrictMode>
 );

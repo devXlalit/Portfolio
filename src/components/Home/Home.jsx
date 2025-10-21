@@ -16,6 +16,8 @@ import { PiReadCvLogoBold } from "react-icons/pi";
 import { motion } from "framer-motion";
 import GitHubHeatmap from "../GitHubHeatmap";
 import avatarImg from "../../assets/IMG_20250128_041115_816-removebg-preview (3).png";
+import { SiCurl } from "react-icons/si";
+
 import {
   FaFigma,
   FaGitAlt,
@@ -26,6 +28,8 @@ import {
   FaNodeJs,
   FaReact,
 } from "react-icons/fa";
+import { FaDocker } from "react-icons/fa";
+
 import {
   SiAdobeillustrator,
   SiAdobephotoshop,
@@ -51,16 +55,31 @@ import { TbApi, TbBrandOauth } from "react-icons/tb";
 import { BiLogoPostgresql } from "react-icons/bi";
 import { IoLogoVercel } from "react-icons/io5";
 import { VscVscode } from "react-icons/vsc";
-
+import { VscAzure } from "react-icons/vsc";
+import { SiYaml } from "react-icons/si";
+import { DiRedis } from "react-icons/di";
+import { SiGithubactions } from "react-icons/si";
+import SEO from "../SEO.jsx";
 const Home = () => {
   return (
     <motion.div
       className="h-auto w-full pt-12 py-0 md:p-12  font-extrabold "
       id="container"
     >
+      <SEO
+        title={
+          "Lalit Pagare | devxlalit | Hire Freelance Full Stack Developer & DevOps Engineer"
+        }
+        description={
+          "Freelance Full Stack Developer & DevOps Engineer. Building enterprise-grade web applications with CI/CD, Docker, & Kubernetes. 3+ years of expertise. Hire a remote full stack devops specialist for projects. Expert in modern web apps, automation, and reliable cloud deployment (AWS/Azure). 3 years experience."
+        }
+        keywords={
+          "freelance full stack devops enginee, full stack developer devops consultant, hire full stack devops freelancer, remote full stack devops specialist, corporate full stack development devops, enterprise full stack and devops services, full-stack CI/CD implementation"
+        }
+      />
       <span className="flex justify-center">
         <img
-          className=" mb-4 md:block md:absolute md:top-36 rounded-full h-40 md:h-60 shadow-[rgba(50,_50,_105,_0.15)_0px_2px_5px_0px,_rgba(0,_0,_0,_0.05)_0px_1px_1px_0px] md:right-40"
+          className=" mb-4 md:block md:absolute md:top-36 rounded-full h-60 md:h-60 shadow-[rgba(50,_50,_105,_0.15)_0px_2px_5px_0px,_rgba(0,_0,_0,_0.05)_0px_1px_1px_0px] md:right-60"
           src={avatarImg}
           referrerPolicy="no-referrer"
           alt="avatar image"
@@ -150,14 +169,14 @@ const Home = () => {
         </motion.button>
       </motion.div>
 
-      <motion.div layout id="skills" className="pt-36 h-auto">
+      <motion.div layout id="skills" className="pt-36 w-full h-auto">
         <motion.h2
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 1, duration: 0.8 }}
           className="text-2xl leading-7 md:text-5xl font-extrabold"
         >
-          SKILLS & TECHNOLOGIES
+          TOOLS & TECHNOLOGIES
         </motion.h2>
         <motion.div
           initial={{ opacity: 0.2, width: "0%" }}
@@ -166,83 +185,140 @@ const Home = () => {
           id="radial-bar1"
           className="h-2 md:h-4 w-12 md:w-20 bg-[#08D9D6] rounded-full "
         ></motion.div>
-        <div className="mt-12  md:p-12 flex gap-5 flex-wrap justify-center w-full">
-          <div className="skills-card-sm drop-shadow-2xl rounded-3xl p-6 md:w-96 shadow-[rgba(50,_50,_105,_0.15)_0px_2px_5px_0px,_rgba(0,_0,_0,_0.05)_0px_1px_1px_0px] md:p-12">
-            <h1 className="text-xl md:text-3xl font-extrabold text-center">
-              FRONT-END
-            </h1>
-
-            <div className="flex mt-8 flex-wrap gap-5 justify-center">
+        <div className=" mt-6  flex gap-5  w-full">
+          <div className="skills-card-sm drop-shadow-2xl rounded-3xl p-6  shadow-[0px_2px_3px_-1px_rgba(0,0,0,0.1),0px_1px_0px_0px_rgba(25,28,33,0.02),0px_0px_0px_1px_rgba(25,28,33,0.08)] md:p-12">
+            <div className="flex mt-8 flex-wrap gap-7 justify-center">
               <Tooltipx
-                icon={<SiAdobephotoshop size={40} color="#1864ab" />}
-                title="Photoshop"
-              />
-              <Tooltipx
-                icon={<SiAdobeillustrator size={40} color="#FF9A00" />}
-                title="Illustrator"
-              />
-              <Tooltipx
-                icon={<FaReact size={40} color="#61DAFB" />}
+                icon={<FaReact size={60} color="#61DAFB" />}
                 title="React "
               />
               <Tooltipx
-                icon={<SiRedux size={40} color="#764ABC" />}
+                icon={<VscAzure size={60} color="#0078D4" />}
+                title="Azure"
+              />
+              <Tooltipx
+                icon={<SiRedux size={60} color="#764ABC" />}
                 title="Redux "
               />
               <Tooltipx
-                icon={<FaJs size={40} color="#F7DF1E" />}
+                icon={<FaJs size={60} color="#F7DF1E" />}
                 title="JavaScript "
               />
               <Tooltipx
-                icon={<SiTypescript size={40} color="#007acc" />}
+                icon={<SiCurl size={60} color="#E95420" />}
+                title="cURL "
+              />
+              <Tooltipx
+                icon={<SiTypescript size={60} color="#007acc" />}
                 title="Typescript"
               />
               <Tooltipx
-                icon={<FaHtml5 size={40} color="#E34F26" />}
+                icon={<FaHtml5 size={60} color="#E34F26" />}
                 title="HTML "
               />
               <Tooltipx
-                icon={<RiTailwindCssFill size={40} color="#06B6D4" />}
+                icon={<FaDocker size={60} color="#0db7ed" />}
+                title="Docker"
+              />
+              <Tooltipx icon={<SiYaml size={60} color="" />} title={"YAML"} />
+              <Tooltipx
+                icon={<RiTailwindCssFill size={60} color="#06B6D4" />}
                 title="Tailwind "
               />
               <Tooltipx
-                icon={<RiBootstrapFill size={40} color="#7952B3" />}
+                icon={<RiBootstrapFill size={60} color="#7952B3" />}
                 title="BootStrap "
               />
               <Tooltipx
-                icon={<IoLogoCss3 size={40} color="#1572B6" />}
+                icon={<IoLogoCss3 size={60} color="#1572B6" />}
                 title="CSS "
               />
               <Tooltipx
-                icon={<FaFigma size={40} color="#F24E1E" />}
+                icon={
+                  <img
+                    src="https://posthog.com/brand/posthog-logomark.svg"
+                    width={70}
+                  />
+                }
+                title="PostHog"
+              />
+              <Tooltipx
+                icon={<FaFigma size={60} color="#F24E1E" />}
                 title="Figma "
               />
               <Tooltipx
-                icon={<FiFramer size={40} color="#0055FF" />}
+                icon={<FiFramer size={60} color="#0055FF" />}
                 title="FramerMotion "
               />
               <Tooltipx
-                icon={<MdAnimation size={40} color="#66DEB1" />}
+                icon={<MdAnimation size={60} color="#66DEB1" />}
                 title="GSAP "
               />
               <Tooltipx
-                icon={<SiJquery size={40} color="#0769AD" />}
+                icon={<SiJquery size={60} color="#0769AD" />}
                 title="JQuery "
               />
               <Tooltipx
-                icon={<SiShadcnui size={40} color="#000000" />}
+                icon={<SiShadcnui size={60} color="#000000" />}
                 title="ShadUI "
               />
-            </div>
-          </div>
-          <div className="skills-card-sm drop-shadow-2xl rounded-3xl p-6 md:w-96 shadow-[rgba(50,_50,_105,_0.15)_0px_2px_5px_0px,_rgba(0,_0,_0,_0.05)_0px_1px_1px_0px] md:p-12">
-            <h1 className="text-xl md:text-3xl font-extrabold text-center">
-              BACK-END
-            </h1>
-            <div className="flex mt-8 flex-wrap gap-5 justify-center">
               <Tooltipx
-                icon={<FaNodeJs size={40} color="#5FA04E" />}
+                icon={<FaNodeJs size={60} color="#5FA04E" />}
                 title="NodeJs"
+              />
+              <Tooltipx
+                icon={<SiGithubactions size={60} color="" />}
+                title={"Workflows"}
+              />
+              <Tooltipx
+                icon={
+                  <svg
+                    width="55"
+                    height="55"
+                    viewBox="0 0 109 113"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M63.7076 110.284C60.8481 113.885 55.0502 111.912 54.9813 107.314L53.9738 40.0627L99.1935 40.0627C107.384 40.0627 111.952 49.5228 106.859 55.9374L63.7076 110.284Z"
+                      fill="url(#paint0_linear)"
+                    />
+                    <path
+                      d="M63.7076 110.284C60.8481 113.885 55.0502 111.912 54.9813 107.314L53.9738 40.0627L99.1935 40.0627C107.384 40.0627 111.952 49.5228 106.859 55.9374L63.7076 110.284Z"
+                      fill="url(#paint1_linear)"
+                      fill-opacity="0.2"
+                    />
+                    <path
+                      d="M45.317 2.07103C48.1765 -1.53037 53.9745 0.442937 54.0434 5.041L54.4849 72.2922H9.83113C1.64038 72.2922 -2.92775 62.8321 2.1655 56.4175L45.317 2.07103Z"
+                      fill="#3ECF8E"
+                    />
+                    <defs>
+                      <linearGradient
+                        id="paint0_linear"
+                        x1="53.9738"
+                        y1="54.974"
+                        x2="94.1635"
+                        y2="71.8295"
+                        gradientUnits="userSpaceOnUse"
+                      >
+                        <stop stop-color="#249361" />
+                        <stop offset="1" stop-color="#3ECF8E" />
+                      </linearGradient>
+                      <linearGradient
+                        id="paint1_linear"
+                        x1="36.1558"
+                        y1="30.578"
+                        x2="54.4844"
+                        y2="65.0806"
+                        gradientUnits="userSpaceOnUse"
+                      >
+                        <stop />
+                        <stop offset="1" stop-opacity="0" />
+                      </linearGradient>
+                    </defs>
+                  </svg>
+                }
+                title="Supabase"
               />
               <Tooltipx
                 icon={
@@ -250,8 +326,8 @@ const Home = () => {
                     role="img"
                     viewBox="0 0 24 24"
                     xmlns="http://www.w3.org/2000/svg"
-                    height={40}
-                    width={40}
+                    height={60}
+                    width={60}
                     fill="#B4CA65"
                   >
                     <title>EJS</title>
@@ -261,104 +337,100 @@ const Home = () => {
                 title="EJS"
               />
               <Tooltipx
-                icon={<SiExpress size={40} color="#000000" />}
+                icon={<SiExpress size={60} color="#000000" />}
                 title="ExpressJs"
               />
               <Tooltipx
-                icon={<RiNextjsFill size={40} color="#000000" />}
+                icon={<RiNextjsFill size={60} color="#000000" />}
                 title="NextJs"
               />
               <Tooltipx
-                icon={<SiPassport size={40} color="#34E27A" />}
+                icon={<SiPassport size={60} color="#34E27A" />}
                 title="PassportJs"
               />
-
-              <TbApi size={40} color="000000" />
               <Tooltipx
-                icon={<BiLogoPostgresql size={40} color="#4169E1" />}
+                icon={<DiRedis size={60} color="D82C20" />}
+                title="Redis"
+              />
+              <Tooltipx
+                icon={<BiLogoPostgresql size={60} color="#4169E1" />}
                 title="PostgreSQL"
               />
               <Tooltipx
-                icon={<SiNpm size={40} color="#CB3837" />}
+                icon={<SiNpm size={60} color="#CB3837" />}
                 title="NPM"
               />
               <Tooltipx
-                icon={<SiMongodb size={40} color="#47A248" />}
+                icon={<SiMongodb size={60} color="#47A248" />}
                 title="MongoDB"
               />
               <Tooltipx
-                icon={<SiMongoose size={40} color="#880000" />}
+                icon={<SiMongoose size={60} color="#880000" />}
                 title="Mongoose"
               />
               <Tooltipx
-                icon={<SiGooglecloud size={40} color="#4285F4" />}
+                icon={<SiGooglecloud size={60} color="#4285F4" />}
                 title="GoogleCloud"
               />
               <Tooltipx
-                icon={<TbBrandOauth size={40} color="#EB5424" />}
+                icon={<TbBrandOauth size={60} color="#EB5424" />}
                 title="OAuth"
               />
               <Tooltipx
-                icon={<SiAppwrite size={40} color="#FD366E" />}
+                icon={<SiAppwrite size={60} color="#FD366E" />}
                 title="Appwrite"
               />
-            </div>
-          </div>
-
-          <div className="skills-card-sm drop-shadow-2xl rounded-3xl p-6 md:w-96 shadow-[rgba(50,_50,_105,_0.15)_0px_2px_5px_0px,_rgba(0,_0,_0,_0.05)_0px_1px_1px_0px] md:p-12">
-            <h1 className="text-xl md:text-3xl font-extrabold text-center">
-              TOOLS
-            </h1>
-            <div className="flex mt-8 flex-wrap gap-5 justify-center">
               <Tooltipx
-                icon={<VscVscode size={40} color="#2F80ED" />}
+                icon={<VscVscode size={60} color="#2F80ED" />}
                 title="VsCode"
               />
               <Tooltipx
-                icon={<FaGitAlt size={40} color="#F05032" />}
-                title="GitBash"
+                icon={<FaGitAlt size={60} color="#F05032" />}
+                title="Git"
               />
               <Tooltipx
-                icon={<SiPostman size={40} color="#FF6C37" />}
+                icon={<SiPostman size={60} color="#FF6C37" />}
                 title="Postman"
               />
               <Tooltipx
-                icon={<FaGithub size={40} color="#181717" />}
+                icon={<FaGithub size={60} color="#181717" />}
                 title="GitHub"
               />
               <Tooltipx
-                icon={<SiNetlify size={40} color="#00C7B7" />}
+                icon={<SiNetlify size={60} color="#00C7B7" />}
                 title="Netlify"
               />
               <Tooltipx
-                icon={<SiObsidian size={40} color="#7C3AED" />}
+                icon={<SiObsidian size={60} color="#7C3AED" />}
                 title="Obsidian"
               />
 
               <Tooltipx
-                icon={<RiNotionFill size={40} color="#00000" />}
+                icon={<RiNotionFill size={60} color="#00000" />}
                 title="Notion"
               />
               <Tooltipx
-                icon={<IoLogoVercel size={40} color="#000000" />}
+                icon={<IoLogoVercel size={60} color="#000000" />}
                 title="Vercel"
               />
               <Tooltipx
-                icon={<FaLinux size={40} color="#FCC624" />}
+                icon={<FaLinux size={60} color="#FCC624" />}
                 title="Linux"
               />
               <Tooltipx
-                icon={<SiGnubash size={40} color="#00000" />}
+                icon={<SiGnubash size={60} color="#00000" />}
                 title="BashScript"
+              />
+              <Tooltipx
+                icon={<SiAdobephotoshop size={60} color="#1864ab" />}
+                title="Photoshop"
+              />
+              <Tooltipx
+                icon={<SiAdobeillustrator size={60} color="#FF9A00" />}
+                title="Illustrator"
               />
             </div>
           </div>
-          {/* <div className="skills-card-sm drop-shadow-2xl rounded-3xl p-6 md:w-96 shadow-[rgba(50,_50,_105,_0.15)_0px_2px_5px_0px,_rgba(0,_0,_0,_0.05)_0px_1px_1px_0px] md:p-12">
-            <h1 className="text-xl md:text-3xl font-extrabold text-center">
-              LANGUAGES
-            </h1>
-            <div className="flex mt-8 flex-wrap gap-5 justify-center"></div>
-          </div> */}
         </div>
       </motion.div>
     </motion.div>

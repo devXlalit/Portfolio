@@ -62,7 +62,7 @@ const GitHubHeatmap = () => {
   }, []);
 
   return (
-    <div className="mt-5 md:my-10 md:w-2/5 md:absolute top-96 -z-10 right-0 md:right-12">
+    <div className="mt-5 md:my-10 md:w-[45vw] md:absolute top-96 -z-10 right-0 md:right-12">
       <div className="">
         <Heatmap
           startDate={
@@ -71,7 +71,10 @@ const GitHubHeatmap = () => {
           endDate={new Date()}
           values={contributions}
           showMonthLabels={true}
+          showWeekdayLabels={false}
           horizontal={true}
+          gutterSize={0.5}
+          onClick={() => window.location.assign("https://github.com")}
           classForValue={(value) => {
             if (!value || value.count === 0) return "color-empty";
             if (value.count >= 1 && value.count < 5) return "color-scale-1";

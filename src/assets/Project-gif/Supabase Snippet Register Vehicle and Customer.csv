@@ -1,0 +1,2 @@
+id,code,discount_type,discount_value,expiry_date,max_uses,uses_count,is_active,created_at,updated_at
+f88f8c29-4073-4e80-9fb9-33840af1fb49,DIWALI,Diwali Offer,398,2025-10-17,3,4,true,2025-10-13 07:00:36.150208,2025-10-13 07:00:36.150208
