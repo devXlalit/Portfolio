@@ -80,7 +80,9 @@ const Home = () => {
       <span className="flex justify-center">
         <img
           className=" mb-4 md:block md:absolute md:top-36 rounded-full h-60 md:h-60 shadow-[rgba(50,_50,_105,_0.15)_0px_2px_5px_0px,_rgba(0,_0,_0,_0.05)_0px_1px_1px_0px] md:right-60"
-          src={avatarImg}
+          src={
+            "https://pbs.twimg.com/profile_images/2008509739911815168/YeO76mcY_400x400.jpg"
+          }
           referrerPolicy="no-referrer"
           alt="avatar image"
         />
