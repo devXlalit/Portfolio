@@ -5,7 +5,7 @@ import {
   RiNotionFill,
   RiTailwindCssFill,
 } from "@remixicon/react";
-import { SiTypescript } from "react-icons/si";
+import { SiNestjs, SiTypescript } from "react-icons/si";
 import { RiLinkedinBoxFill } from "@remixicon/react";
 import { FaTwitter } from "react-icons/fa";
 import "animate.css";
@@ -13,7 +13,7 @@ import { Link } from "react-router-dom";
 import TextChanger from "../../TextChanger";
 import Tooltipx from "../Tooltipx";
 import { PiReadCvLogoBold } from "react-icons/pi";
-import { motion } from "framer-motion";
+import { color, motion } from "framer-motion";
 import GitHubHeatmap from "../GitHubHeatmap";
 import avatarImg from "../../assets/IMG_20250128_041115_816-removebg-preview (3).png";
 import { SiCurl } from "react-icons/si";
@@ -31,35 +31,58 @@ import {
 import { FaDocker } from "react-icons/fa";
 
 import {
-  SiAdobeillustrator,
-  SiAdobephotoshop,
   SiAppwrite,
   SiExpress,
   SiGnubash,
-  SiGooglecloud,
-  SiJquery,
   SiMongodb,
-  SiMongoose,
-  SiNetlify,
-  SiNpm,
-  SiObsidian,
-  SiPassport,
   SiPostman,
   SiRedux,
-  SiShadcnui,
 } from "react-icons/si";
 import { IoLogoCss3 } from "react-icons/io";
-import { FiFramer } from "react-icons/fi";
-import { MdAnimation } from "react-icons/md";
-import { TbApi, TbBrandOauth } from "react-icons/tb";
 import { BiLogoPostgresql } from "react-icons/bi";
-import { IoLogoVercel } from "react-icons/io5";
-import { VscVscode } from "react-icons/vsc";
 import { VscAzure } from "react-icons/vsc";
 import { SiYaml } from "react-icons/si";
 import { DiRedis } from "react-icons/di";
 import { SiGithubactions } from "react-icons/si";
+import { RiSupabaseFill } from "react-icons/ri";
+
 import SEO from "../SEO.jsx";
+
+const tools = [
+  { Icon: FaReact, color: "#61DAFB", title: "React" },
+  { Icon: VscAzure, color: "#0078D4", title: "Azure" },
+  { Icon: SiRedux, color: "#764ABC", title: "Redux" },
+  { Icon: FaJs, color: "#F7DF1E", title: "JavaScript" },
+  { Icon: SiCurl, color: "#E95420", title: "cURL" },
+  { Icon: SiTypescript, color: "#007acc", title: "Typescript" },
+  { Icon: FaHtml5, color: "#E34F26", title: "HTML" },
+  { Icon: FaDocker, color: "#0db7ed", title: "Docker" },
+  { Icon: SiYaml, color: null, title: "YAML" },
+  { Icon: RiTailwindCssFill, color: "#06B6D4", title: "Tailwind" },
+  { Icon: RiBootstrapFill, color: "#7952B3", title: "BootStrap" },
+  { Icon: IoLogoCss3, color: "#1572B6", title: "CSS" },
+  { Icon: FaFigma, color: "#F24E1E", title: "Figma" },
+  { Icon: FaNodeJs, color: "#5FA04E", title: "NodeJs" },
+  { Icon: SiGithubactions, color: null, title: "CI/CD" },
+
+  { Icon: RiSupabaseFill, color: "#40c057", title: "Supabase" },
+
+  { Icon: SiNestjs, color: "#e64980", title: "NestJS" },
+
+  { Icon: SiExpress, color: "#000000", title: "ExpressJs" },
+  { Icon: RiNextjsFill, color: "#000000", title: "NextJs" },
+  { Icon: DiRedis, color: "#D82C20", title: "Redis" },
+  { Icon: BiLogoPostgresql, color: "#4169E1", title: "PostgreSQL" },
+  { Icon: SiMongodb, color: "#47A248", title: "MongoDB" },
+  { Icon: SiAppwrite, color: "#FD366E", title: "Appwrite" },
+  { Icon: FaGitAlt, color: "#F05032", title: "Git" },
+  { Icon: SiPostman, color: "#FF6C37", title: "Postman" },
+  { Icon: FaGithub, color: "#181717", title: "GitHub" },
+  { Icon: FaLinux, color: "#FCC624", title: "Linux" },
+  { Icon: SiGnubash, color: "#000000", title: "BashScript" },
+  
+];
+
 const Home = () => {
   return (
     <motion.div
@@ -190,247 +213,13 @@ const Home = () => {
         <div className=" mt-6  flex gap-5  w-full">
           <div className="skills-card-sm drop-shadow-2xl rounded-3xl p-6  shadow-[0px_2px_3px_-1px_rgba(0,0,0,0.1),0px_1px_0px_0px_rgba(25,28,33,0.02),0px_0px_0px_1px_rgba(25,28,33,0.08)] md:p-12">
             <div className="flex mt-8 flex-wrap gap-7 justify-center">
-              <Tooltipx
-                icon={<FaReact size={60} color="#61DAFB" />}
-                title="React "
-              />
-              <Tooltipx
-                icon={<VscAzure size={60} color="#0078D4" />}
-                title="Azure"
-              />
-              <Tooltipx
-                icon={<SiRedux size={60} color="#764ABC" />}
-                title="Redux "
-              />
-              <Tooltipx
-                icon={<FaJs size={60} color="#F7DF1E" />}
-                title="JavaScript "
-              />
-              <Tooltipx
-                icon={<SiCurl size={60} color="#E95420" />}
-                title="cURL "
-              />
-              <Tooltipx
-                icon={<SiTypescript size={60} color="#007acc" />}
-                title="Typescript"
-              />
-              <Tooltipx
-                icon={<FaHtml5 size={60} color="#E34F26" />}
-                title="HTML "
-              />
-              <Tooltipx
-                icon={<FaDocker size={60} color="#0db7ed" />}
-                title="Docker"
-              />
-              <Tooltipx icon={<SiYaml size={60} color="" />} title={"YAML"} />
-              <Tooltipx
-                icon={<RiTailwindCssFill size={60} color="#06B6D4" />}
-                title="Tailwind "
-              />
-              <Tooltipx
-                icon={<RiBootstrapFill size={60} color="#7952B3" />}
-                title="BootStrap "
-              />
-              <Tooltipx
-                icon={<IoLogoCss3 size={60} color="#1572B6" />}
-                title="CSS "
-              />
-              <Tooltipx
-                icon={
-                  <img
-                    src="https://posthog.com/brand/posthog-logomark.svg"
-                    width={70}
-                  />
-                }
-                title="PostHog"
-              />
-              <Tooltipx
-                icon={<FaFigma size={60} color="#F24E1E" />}
-                title="Figma "
-              />
-              <Tooltipx
-                icon={<FiFramer size={60} color="#0055FF" />}
-                title="FramerMotion "
-              />
-              <Tooltipx
-                icon={<MdAnimation size={60} color="#66DEB1" />}
-                title="GSAP "
-              />
-              <Tooltipx
-                icon={<SiJquery size={60} color="#0769AD" />}
-                title="JQuery "
-              />
-              <Tooltipx
-                icon={<SiShadcnui size={60} color="#000000" />}
-                title="ShadUI "
-              />
-              <Tooltipx
-                icon={<FaNodeJs size={60} color="#5FA04E" />}
-                title="NodeJs"
-              />
-              <Tooltipx
-                icon={<SiGithubactions size={60} color="" />}
-                title={"Workflows"}
-              />
-              <Tooltipx
-                icon={
-                  <svg
-                    width="55"
-                    height="55"
-                    viewBox="0 0 109 113"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      d="M63.7076 110.284C60.8481 113.885 55.0502 111.912 54.9813 107.314L53.9738 40.0627L99.1935 40.0627C107.384 40.0627 111.952 49.5228 106.859 55.9374L63.7076 110.284Z"
-                      fill="url(#paint0_linear)"
-                    />
-                    <path
-                      d="M63.7076 110.284C60.8481 113.885 55.0502 111.912 54.9813 107.314L53.9738 40.0627L99.1935 40.0627C107.384 40.0627 111.952 49.5228 106.859 55.9374L63.7076 110.284Z"
-                      fill="url(#paint1_linear)"
-                      fill-opacity="0.2"
-                    />
-                    <path
-                      d="M45.317 2.07103C48.1765 -1.53037 53.9745 0.442937 54.0434 5.041L54.4849 72.2922H9.83113C1.64038 72.2922 -2.92775 62.8321 2.1655 56.4175L45.317 2.07103Z"
-                      fill="#3ECF8E"
-                    />
-                    <defs>
-                      <linearGradient
-                        id="paint0_linear"
-                        x1="53.9738"
-                        y1="54.974"
-                        x2="94.1635"
-                        y2="71.8295"
-                        gradientUnits="userSpaceOnUse"
-                      >
-                        <stop stop-color="#249361" />
-                        <stop offset="1" stop-color="#3ECF8E" />
-                      </linearGradient>
-                      <linearGradient
-                        id="paint1_linear"
-                        x1="36.1558"
-                        y1="30.578"
-                        x2="54.4844"
-                        y2="65.0806"
-                        gradientUnits="userSpaceOnUse"
-                      >
-                        <stop />
-                        <stop offset="1" stop-opacity="0" />
-                      </linearGradient>
-                    </defs>
-                  </svg>
-                }
-                title="Supabase"
-              />
-              <Tooltipx
-                icon={
-                  <svg
-                    role="img"
-                    viewBox="0 0 24 24"
-                    xmlns="http://www.w3.org/2000/svg"
-                    height={60}
-                    width={60}
-                    fill="#B4CA65"
-                  >
-                    <title>EJS</title>
-                    <path d="m8.291 5.696-1.258-1.58 1.668-1.55 1.258 1.58-1.668 1.55zm2.34 2.048.205-1.55-5.412-.03-.204 1.55 3.945.022L7.8 17.852l-.839.77-.405-.004c.385.403.803.81 1.236 1.214l1.378-1.265 1.458-10.823h.004zm-6.757 7.254s2.925-.468 3.54.38c0 0-1.756-2.925-4.184-2.925 0-.074-.098-1.353 5.146-2.609l.206-1.53c-8.346 1.108-14.287 4.322.265 13.12 0 0-5.675-4.71-4.973-6.436zM13 6.223 11.216 7.86l-.526 4.037 1.316 1.638 5.675.058.556.702-.38 2.633-.713.685-.018.017h2.193l.556-4.037-1.345-1.638-5.646-.058-.556-.702.351-2.633.731-.702 5.032.058.556.673-.176 1.229h1.55l.264-1.902-1.317-1.667-6.318-.03zm2.882 11.908.545-.523-4.305-.035-.965-1.17-1.258 1.17 1.346 1.667 6.318.03 1.22-1.139h-2.901zM13.13 8.965a103.16 103.16 0 0 1 4.624-.554l-4.145-.048-.457.44-.022.162zm8.026-1.156-.025.179-.018.132c.92-.07 1.87-.139 2.887-.2 0 0-1.113-.067-2.844-.11zM1.914 18.392l1.404 1.784 2.66.02c-1.292-.875-2.393-1.708-3.296-2.499l-.768.695z" />
-                  </svg>
-                }
-                title="EJS"
-              />
-              <Tooltipx
-                icon={<SiExpress size={60} color="#000000" />}
-                title="ExpressJs"
-              />
-              <Tooltipx
-                icon={<RiNextjsFill size={60} color="#000000" />}
-                title="NextJs"
-              />
-              <Tooltipx
-                icon={<SiPassport size={60} color="#34E27A" />}
-                title="PassportJs"
-              />
-              <Tooltipx
-                icon={<DiRedis size={60} color="D82C20" />}
-                title="Redis"
-              />
-              <Tooltipx
-                icon={<BiLogoPostgresql size={60} color="#4169E1" />}
-                title="PostgreSQL"
-              />
-              <Tooltipx
-                icon={<SiNpm size={60} color="#CB3837" />}
-                title="NPM"
-              />
-              <Tooltipx
-                icon={<SiMongodb size={60} color="#47A248" />}
-                title="MongoDB"
-              />
-              <Tooltipx
-                icon={<SiMongoose size={60} color="#880000" />}
-                title="Mongoose"
-              />
-              <Tooltipx
-                icon={<SiGooglecloud size={60} color="#4285F4" />}
-                title="GoogleCloud"
-              />
-              <Tooltipx
-                icon={<TbBrandOauth size={60} color="#EB5424" />}
-                title="OAuth"
-              />
-              <Tooltipx
-                icon={<SiAppwrite size={60} color="#FD366E" />}
-                title="Appwrite"
-              />
-              <Tooltipx
-                icon={<VscVscode size={60} color="#2F80ED" />}
-                title="VsCode"
-              />
-              <Tooltipx
-                icon={<FaGitAlt size={60} color="#F05032" />}
-                title="Git"
-              />
-              <Tooltipx
-                icon={<SiPostman size={60} color="#FF6C37" />}
-                title="Postman"
-              />
-              <Tooltipx
-                icon={<FaGithub size={60} color="#181717" />}
-                title="GitHub"
-              />
-              <Tooltipx
-                icon={<SiNetlify size={60} color="#00C7B7" />}
-                title="Netlify"
-              />
-              <Tooltipx
-                icon={<SiObsidian size={60} color="#7C3AED" />}
-                title="Obsidian"
-              />
-
-              <Tooltipx
-                icon={<RiNotionFill size={60} color="#00000" />}
-                title="Notion"
-              />
-              <Tooltipx
-                icon={<IoLogoVercel size={60} color="#000000" />}
-                title="Vercel"
-              />
-              <Tooltipx
-                icon={<FaLinux size={60} color="#FCC624" />}
-                title="Linux"
-              />
-              <Tooltipx
-                icon={<SiGnubash size={60} color="#00000" />}
-                title="BashScript"
-              />
-              <Tooltipx
-                icon={<SiAdobephotoshop size={60} color="#1864ab" />}
-                title="Photoshop"
-              />
-              <Tooltipx
-                icon={<SiAdobeillustrator size={60} color="#FF9A00" />}
-                title="Illustrator"
-              />
+              {tools.map(({ Icon, color, title }, i) => (
+                <Tooltipx
+                  key={i}
+                  icon={<Icon size={60} color={color} />}
+                  title={title}
+                />
+              ))}
             </div>
           </div>
         </div>

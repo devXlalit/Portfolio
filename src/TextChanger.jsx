@@ -1,7 +1,12 @@
 import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 const TextChanger = () => {
-  const texts = ["FULL STACK  ", "MERN STACK  ", "FRONT END  ", "BACK END  "];
+  const texts = [
+    "FULL STACK  ",
+    "MERN STACK  ",
+    "FRONT END  ",
+    "BACK END  ",
+  ];
 
   const [currentText, setCurrentText] = useState("");
   const [endValue, setEndValue] = useState(1);

@@ -30,7 +30,7 @@ ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
     <RouterProvider router={router} />
     <p className="text-center py-2 text-xs font-[gilroy-medium] opacity-50">
-      Last Updated - Oct 2025
+      Last Updated - April 2026
     </p>
   </React.StrictMode>
 );
