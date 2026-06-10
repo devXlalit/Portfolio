@@ -5,37 +5,46 @@ import { RxCross2 } from "react-icons/rx";
 import { FaCheckCircle } from "react-icons/fa";
 
 import { motion } from "framer-motion";
+import { useContact } from "../../context/ContactContext";
 const Contact = () => {
+  const { isOpen, openContact, closeContact } = useContact();
   const [isHovered, setIsHovered] = useState(false);
-  const [OpenBox, setOpenBox] = useState(false);
   const [loading, setLoading] = useState(false);
+  const [error, setError] = useState("");
 
   const sendEmail = async (e) => {
-    setLoading(true);
     e.preventDefault();
+    setError("");
+    setLoading(true);
     const formData = new FormData(e.target);
 
     formData.append("access_key", import.meta.env.VITE_PUBLIC_ACCESS_KEY);
 
-    const response = await fetch("https://api.web3forms.com/submit", {
-      method: "POST",
-      body: formData,
-    });
+    try {
+      const response = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        body: formData,
+      });
 
-    const data = await response.json();
+      const data = await response.json();
 
-    if (data.success) {
+      if (data.success) {
+        closeContact();
+        setIsHovered(false);
+      } else {
+        console.log("Error", data);
+        setError("Couldn't send your message. Please try again.");
+      }
+    } catch (err) {
+      console.log("Error", err);
+      setError("Network error. Please try again.");
+    } finally {
       setLoading(false);
-      setOpenBox(false);
-      setIsHovered(false);
-    } else {
-      console.log("Error", data);
-      setResult(data.message);
     }
   };
   return (
     <>
-      {OpenBox ? (
+      {isOpen ? (
         <form
           onSubmit={sendEmail}
           className="md:h-4/5 text-xl text-balance leading-loose flex flex-col z-40 md:rounded-2xl text-white p-10 absolute h-full w-full  md:bottom-10 md:right-10 right-0 bottom-0   bg-[#252A34] md:w-1/3 "
@@ -43,7 +52,7 @@ const Contact = () => {
           <RxCross2
             className="absolute right-7 top-7 hover:scale-110 duration-200 cursor-pointer"
             onClick={() => {
-              setOpenBox(false);
+              closeContact();
             }}
           />
           <input
@@ -79,16 +88,22 @@ const Contact = () => {
             id=""
             placeholder="Any feedback, suggestion or a message?"
           ></textarea>
+          {error && (
+            <p className="mt-3 text-sm text-[#FF2E63]" role="alert">
+              {error}
+            </p>
+          )}
           <button
             type="submit"
             value="Send"
+            disabled={loading}
             className={`outline-none hover:scale-95 hover:opacity-90 duration-200 shadow-xl flex  justify-center items-center gap-2 ${
               loading ? "bg-green-400" : "bg-white"
             } mt-4 text-[#252A34] rounded-lg`}
           >
             {loading ? (
               <span className="flex items-center gap-2 justify-center text-white ">
-                SENT!! <FaCheckCircle className="mb-1" />{" "}
+                Sending… <FaCheckCircle className="mb-1" />{" "}
               </span>
             ) : (
               <span className="flex items-center justify-center gap-2">
@@ -112,7 +127,7 @@ const Contact = () => {
                 x: 0,
               }}
               transition={{ duration: 0.1 }}
-              className="bg-[#EAEAEA] hidden md:block p-3 rounded-full fixed bottom-10 right-24 hover:scale-105 duration-300 cursor-pointer font-[gilroy-medium] "
+              className="bg-surface text-content border border-content/10 shadow-lg hidden md:block p-3 rounded-full fixed bottom-10 right-24 hover:scale-105 duration-300 cursor-pointer font-[gilroy-medium] "
             >
               Let's talk!
             </motion.span>
@@ -121,10 +136,9 @@ const Contact = () => {
           <RiChat1Line
             onMouseEnter={() => setIsHovered(true)}
             onMouseLeave={() => setIsHovered(false)}
-            onClick={() => setOpenBox(true)}
+            onClick={() => openContact()}
             size={50}
-            color="white"
-            className="bg-[#252A34] p-3 rounded-full fixed bottom-10 right-10 hover:scale-105 duration-300 cursor-pointer drop-shadow-2xl "
+            className="bg-content text-page p-3 rounded-full fixed bottom-10 right-10 hover:scale-105 duration-300 cursor-pointer drop-shadow-2xl "
           />
         </div>
       )}

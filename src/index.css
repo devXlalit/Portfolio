@@ -2,6 +2,47 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Theme tokens — space-separated RGB triplets so Tailwind's `<alpha-value>`
+   opacity modifiers (e.g. text-content/65) work in both themes.
+   Accent colors (teal #08D9D6, pink #FF2E63) are intentionally NOT themed. */
+:root {
+  --c-page: 246 247 249; /* #F6F7F9 soft off-white */
+  --c-surface: 255 255 255; /* #FFFFFF cards */
+  --c-content: 37 42 52; /* #252A34 ink */
+  color-scheme: light;
+}
+
+.dark {
+  --c-page: 19 22 27; /* #13161B deep ink */
+  --c-surface: 30 34 41; /* #1E2229 elevated card */
+  --c-content: 233 234 234; /* #E9EAEA light */
+  color-scheme: dark;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: rgb(var(--c-page));
+  color: rgb(var(--c-content));
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Respect users who prefer reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+  }
+}
+
 @font-face {
   font-family: gilroy-heavy;
   src: url(./assets/fonts/Gilroy-ExtraBold.ttf);
@@ -15,9 +56,17 @@
   src: url(./assets/fonts/Gilroy-Medium.ttf);
 }
 
-/* Heatmap Color Styling */
-.color-empty {
-  fill: #161b22; /* GitHub background */
+/* Heatmap Color Styling.
+   Scoped to the heatmap container + !important to beat the library's own
+   `.react-calendar-heatmap .color-empty { fill:#eee }` (equal/higher
+   specificity, loaded after ours — otherwise empty cells render near-white
+   in dark mode). */
+.react-calendar-heatmap .color-empty {
+  fill: #e6e8eb !important; /* empty cell — light theme */
+}
+
+.dark .react-calendar-heatmap .color-empty {
+  fill: #1f242c !important; /* empty cell — dark theme */
 }
 
 .color-scale-1 {
