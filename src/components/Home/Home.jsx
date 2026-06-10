@@ -117,7 +117,7 @@ const Home = () => {
 
           {/* Social / connect */}
           <BentoCard eyebrow="Connect" index={1} className="lg:col-span-4">
-            <div className="grid grid-cols-2 gap-3">
+            <div className="grid flex-1 auto-rows-fr grid-cols-2 gap-3">
               {socials.map(({ Icon, title, href, hover }) => (
                 <a
                   key={title}
@@ -138,7 +138,7 @@ const Home = () => {
 
           {/* Stats */}
           <BentoCard eyebrow="By the numbers" index={2} className="lg:col-span-4">
-            <div className="grid grid-cols-3 gap-2">
+            <div className="grid flex-1 content-center grid-cols-3 gap-2">
               {stats.map(({ value, label }) => (
                 <div key={label} className="flex flex-col">
                   <span className="text-3xl md:text-4xl text-[#08D9D6] leading-none">

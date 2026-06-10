@@ -60,7 +60,7 @@ const BentoCard = ({
         </span>
       )}
 
-      <div className="relative z-10">
+      <div className="relative z-10 flex h-full flex-col">
         {eyebrow && (
           <span
             className={`mb-3 inline-flex items-center gap-2 text-xs md:text-sm font-[gilroy-medium] uppercase tracking-[0.18em] ${
