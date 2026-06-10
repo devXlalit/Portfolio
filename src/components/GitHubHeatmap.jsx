@@ -62,8 +62,8 @@ const GitHubHeatmap = () => {
   }, []);
 
   return (
-    <div className="mt-5 md:my-10 md:w-[45vw] md:absolute top-96 -z-10 right-0 md:right-12">
-      <div className="">
+    <div className="w-full">
+      <div className="w-full">
         <Heatmap
           startDate={
             new Date(new Date().setFullYear(new Date().getFullYear() - 1))

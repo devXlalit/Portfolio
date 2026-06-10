@@ -18,12 +18,39 @@ const experienceData = [
     CompanyName: "MetaVisionRS - EdTech and Product Company",
     WebsiteLink: "https://metavisionrs.in/",
     Date: "May 2025 - Present",
+    Summary:
+      "Building and scaling the MotoSure Assist platform end-to-end — from database architecture to cloud deployment.",
     ListItems: [
-      "Worked on the complete PSQL based database and ER system design Build managed and created the complete DBA operations for MotoSure Assist app backend with Supabase. Created it more scalable and efficient. that can handle 100k+ users. Also worked on optimizing complex SQL queries to improve application performance. Created Functions, Triggers, and Views and Joins to enhance database functionality, maintain data integrity and analytics.",
-      "Created and maintained RESTful APIs using Node.js and Express.js to facilitate seamless communication between the frontend and backend systems. Implemented robust authentication and authorization mechanisms to ensure data security and user privacy. Also worked on MS Azure cloud services for deploying and managing web applications, ensuring high availability and scalability.",
-      "Created Web applications for MotoSure Assist and MetaVisionRS using Modern Technologies such as React.js and Typescript, ensuring responsive design and optimal user experience across devices. Implemented state management solutions using Context API to efficiently handle application state and data flow.",
-      "Collaborated with the team and and UI/UX Engineer to increased website integrity with all the devices, Worked on the development flow with Github Actions CI/CD workflows Automation for both developer testing release and productions release. To ensure smooth and efficient deployment processes.",
-      "Worked on the App QA testing and bug fixing to ensure high-quality deliverables. Conducted code reviews and provided constructive feedback to team members to maintain code quality standards.",
+      {
+        k: "Database architecture",
+        v: "Designed a scalable PostgreSQL schema and ER system on Supabase built to handle 100k+ users, with optimized queries, functions, triggers, and views for performance and data integrity.",
+      },
+      {
+        k: "Backend & APIs",
+        v: "Built and maintained RESTful APIs with Node.js and Express, secured by robust authentication and authorization.",
+      },
+      {
+        k: "Cloud & deployment",
+        v: "Deployed and managed web apps on Microsoft Azure for high availability and scalability.",
+      },
+      {
+        k: "Frontend",
+        v: "Shipped responsive web apps in React and TypeScript with Context API state management.",
+      },
+      {
+        k: "CI/CD & quality",
+        v: "Automated test and release pipelines with GitHub Actions, and led QA, bug fixing, and code reviews.",
+      },
+    ],
+    Tech: [
+      "PostgreSQL",
+      "Supabase",
+      "Node.js",
+      "Express",
+      "React",
+      "TypeScript",
+      "Azure",
+      "GitHub Actions",
     ],
   },
   {
@@ -31,33 +58,69 @@ const experienceData = [
     CompanyName: "MaticAlgos - Trading Strategy Builder",
     WebsiteLink: "https://buildalgos.com/",
     Date: "Dec 2024 - Jan 2025",
+    Summary:
+      "Contract work enhancing the MaticAlgos trading-strategy platform.",
     ListItems: [
-      "Worked on the contract based work for building and enhancing features of MaticAlgo platform using React.js for frontend development.",
-      "Impletemented Posthog analytics to track user behavior and engagement on the platform.",
-      "Implemented React charts with rechart library to visualize trading data and performance metrics effectively.",
+      {
+        k: "Feature development",
+        v: "Built and enhanced platform features with React.",
+      },
+      {
+        k: "Analytics",
+        v: "Integrated PostHog to track user behavior and engagement.",
+      },
+      {
+        k: "Data visualization",
+        v: "Built interactive trading charts with Recharts to surface performance metrics.",
+      },
     ],
+    Tech: ["React", "PostHog", "Recharts"],
   },
   {
     JobTitle: "Frontend Engineer",
     CompanyName: "Futuristic Coding Academy",
     WebsiteLink: "https://futuristiccodingacademy.com/",
     Date: "May 2023 - Aug 2024",
+    Summary:
+      "Owned the frontend and growth-focused landing pages for an ed-tech academy.",
     ListItems: [
-      "Worked on the complete frontend development of the website using React.js and Tailwind CSS to create a responsive and user-friendly interface.",
-      "Increased Boot Camp Registrations by 70% Designed and developed a landing page that significantly boosted offline students.",
-      "Improved Website Traffic by 40% Optimized website performance, resulting in a revenue increase of 70K from boot camp.",
-      "Streamlined Development Workflows Delivered landing pages 5X faster by leveraging Git/GitHub and resolving critical bugs",
+      {
+        k: "Frontend build",
+        v: "Developed the full site in React and Tailwind CSS with a responsive, user-friendly interface.",
+      },
+      {
+        k: "Conversion",
+        v: "Designed a landing page that grew boot-camp registrations by 70%.",
+      },
+      {
+        k: "Performance & revenue",
+        v: "Optimized site performance, driving a 40% traffic lift and ₹70K in boot-camp revenue.",
+      },
+      {
+        k: "Workflow",
+        v: "Delivered landing pages 5× faster using Git/GitHub and rapid bug resolution.",
+      },
     ],
+    Tech: ["React", "Tailwind CSS", "Git"],
   },
   {
     JobTitle: "Frontend Developer",
     CompanyName: "Qoulomb - Content writing and marketing agency",
     WebsiteLink: "https://qoulomb.com/",
     Date: "Oct 2023 - Dec 2023",
+    Summary:
+      "Contract landing page for The Blunt, a YouTube creator with 200k+ subscribers.",
     ListItems: [
-      "Worked on a contract basis out sourced project for building the landing page for The Blunt, a Youtube content creating company with 200k+ subscribers.",
-      "Enhanced user engagement by developing a responsive landing page using Vite and React.js, resulting in a 25% increase in visitor retention. to showcase their services and offerings effectively.",
+      {
+        k: "Landing page",
+        v: "Built a responsive marketing page with Vite and React to showcase their services.",
+      },
+      {
+        k: "Engagement",
+        v: "Increased visitor retention by 25%.",
+      },
     ],
+    Tech: ["Vite", "React"],
   },
 ];
 
@@ -145,7 +208,7 @@ const Work = () => {
         ></motion.div>
 
         <div className="flex">
-          <div className="">
+          <div className="mt-10 w-full">
             {experienceData.map((item, index) => (
               <ExperienceBox
                 key={index}
@@ -153,7 +216,11 @@ const Work = () => {
                 CompanyName={item.CompanyName}
                 WebsiteLink={item.WebsiteLink}
                 Date={item.Date}
+                Summary={item.Summary}
                 ListItems={item.ListItems}
+                Tech={item.Tech}
+                isLast={index === experienceData.length - 1}
+                index={index}
               />
             ))}
           </div>

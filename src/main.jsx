@@ -8,7 +8,6 @@ import {
 } from "react-router-dom";
 import App from "./App.jsx";
 import Home from "./components/Home/Home.jsx";
-import Work from "./components/Works/Work.jsx";
 
 const router = createHashRouter([
   {
@@ -19,9 +18,11 @@ const router = createHashRouter([
         path: "",
         element: <Home />,
       },
+      // /work now lives in-page as an anchor section; keep the path as an
+      // alias so existing links don't 404.
       {
         path: "work",
-        element: <Work />,
+        element: <Home />,
       },
     ],
   },
