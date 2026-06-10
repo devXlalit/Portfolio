@@ -74,8 +74,12 @@ const Home = () => {
                 <h1 className="mt-4 text-5xl md:text-7xl leading-[1.02]">
                   I&apos;m <span className="text-[#08D9D6]">Lalit,</span>
                 </h1>
-                <h2 className="mt-1 flex flex-wrap items-baseline gap-x-3 text-3xl md:text-6xl leading-tight">
-                  <TextChanger />
+                <h2 className="mt-1 flex flex-col text-3xl md:text-6xl leading-tight">
+                  {/* Reserve one line and never wrap so the cycling word
+                      (FULL STACK / MERN STACK / …) can't resize the hero. */}
+                  <span className="block min-h-[1.25em] whitespace-nowrap">
+                    <TextChanger />
+                  </span>
                   <span className="text-[#FF2E63]">DEVELOPER</span>
                 </h2>
                 <p className="mt-5 max-w-xl text-sm md:text-lg font-[gilroy-medium] text-[#EAEAEA]/70 leading-relaxed">
