@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://lalitsportfolio.site/sitemap.xml
+Sitemap: https://lalitpagare.com/sitemap.xml
