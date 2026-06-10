@@ -79,7 +79,7 @@ const Navbar = () => {
     >
       <Link to="/" onClick={() => go("home")} className="shrink-0">
         <img
-          className="h-10 md:h-12 transition-[filter] duration-300 dark:brightness-0 dark:invert"
+          className="h-10 md:h-8 transition-[filter] duration-300 dark:brightness-0 dark:invert"
           src={mainLogo}
           alt="logo"
         />

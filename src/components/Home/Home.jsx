@@ -4,6 +4,7 @@ import "animate.css";
 
 import SEO from "../SEO.jsx";
 import BentoCard from "../BentoCard.jsx";
+import SortableGrid from "../SortableBentoGrid.jsx";
 import TextChanger from "../../TextChanger";
 import Tooltipx from "../Tooltipx";
 import GitHubHeatmap from "../GitHubHeatmap";
@@ -32,6 +33,10 @@ const PROJECT_SPANS = [
   "lg:col-span-4",
 ];
 
+// Shared grid shell: dense flow keeps the layout tidy after rearranging.
+const GRID_CLASS =
+  "grid grid-cols-1 gap-4 md:gap-5 lg:grid-cols-12 grid-flow-row-dense";
+
 const Home = () => {
   const { openContact } = useContact();
 
@@ -39,6 +44,177 @@ const Home = () => {
     const el = document.getElementById(id);
     if (el) el.scrollIntoView({ behavior: "smooth", block: "start" });
   };
+
+  const heroItems = [
+    {
+      id: "identity",
+      dark: true,
+      span: "lg:col-span-8 lg:row-span-2",
+      render: () => (
+        <BentoCard
+          dark
+          eyebrow="FULL STACK · DEVOPS"
+          index={0}
+          interactive={false}
+          className="h-full"
+        >
+          <div className="flex flex-col gap-6 md:flex-row md:items-start md:justify-between">
+            <div className="min-w-0">
+              <span className="inline-flex items-center gap-2 rounded-full bg-[#08D9D6]/15 px-3 py-1 text-xs md:text-sm font-[gilroy-medium] text-[#08D9D6]">
+                <span className="h-2 w-2 rounded-full bg-[#08D9D6] animate-pulse" />
+                Available for freelance
+              </span>
+              <h1 className="mt-4 text-5xl md:text-7xl leading-[1.02]">
+                I&apos;m <span className="text-[#08D9D6]">Lalit,</span>
+              </h1>
+              <h2 className="mt-1 flex flex-col text-3xl md:text-6xl leading-tight">
+                {/* Reserve one line and never wrap so the cycling word
+                    (FULL STACK / MERN STACK / …) can't resize the hero. */}
+                <span className="block min-h-[1.25em] whitespace-nowrap">
+                  <TextChanger />
+                </span>
+                <span className="text-[#FF2E63]">DEVELOPER</span>
+              </h2>
+              <p className="mt-5 max-w-xl text-sm md:text-lg font-[gilroy-medium] text-[#EAEAEA]/70 leading-relaxed">
+                I build scalable, SEO-friendly web apps and reliable cloud
+                deployments — owning the stack from database design to CI/CD.
+              </p>
+
+              <div className="mt-7 flex flex-wrap gap-3">
+                <button
+                  type="button"
+                  onClick={() => scrollTo("projects")}
+                  className="flex items-center gap-1 rounded-full bg-[#08D9D6] px-6 py-3 text-sm text-[#252A34] transition-transform duration-300 hover:scale-105"
+                >
+                  Explore my work
+                  <MdArrowOutward size={18} />
+                </button>
+                <button
+                  type="button"
+                  onClick={() => openContact()}
+                  className="rounded-full border border-[#EAEAEA]/25 px-6 py-3 text-sm text-[#EAEAEA] transition-colors duration-300 hover:bg-[#EAEAEA] hover:text-[#252A34]"
+                >
+                  Let&apos;s talk
+                </button>
+              </div>
+            </div>
+
+            <img
+              src={AVATAR_URL}
+              referrerPolicy="no-referrer"
+              alt="Lalit Pagare"
+              className="h-24 w-24 hidden md:block shrink-0 rounded-2xl object-cover shadow-[0px_8px_30px_-12px_rgba(0,0,0,0.5)] ring-2 ring-[#08D9D6]/40 md:h-28 md:w-28"
+            />
+          </div>
+        </BentoCard>
+      ),
+    },
+    {
+      id: "connect",
+      span: "lg:col-span-4",
+      render: () => (
+        <BentoCard eyebrow="Connect" index={1} className="h-full">
+          <div className="grid flex-1 auto-rows-fr grid-cols-2 gap-3">
+            {socials.map(({ Icon, title, href, hover }) => (
+              <a
+                key={title}
+                href={href}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-2 rounded-2xl border border-content/[0.07] px-3 py-3 text-sm font-[gilroy-medium] text-content/80 transition-all duration-200 hover:-translate-y-0.5 hover:border-content/15"
+              >
+                <Icon
+                  size={26}
+                  className={`text-content transition-colors duration-200 ${hover}`}
+                />
+                {title}
+              </a>
+            ))}
+          </div>
+        </BentoCard>
+      ),
+    },
+    {
+      id: "stats",
+      span: "lg:col-span-4",
+      render: () => (
+        <BentoCard eyebrow="By the numbers" index={2} className="h-full">
+          <div className="grid flex-1 content-center grid-cols-3 gap-2">
+            {stats.map(({ value, label }) => (
+              <div key={label} className="flex flex-col">
+                <span className="text-3xl md:text-4xl text-[#08D9D6] leading-none">
+                  {value}
+                </span>
+                <span className="mt-2 text-xs md:text-sm font-[gilroy-medium] text-content/65 leading-snug">
+                  {label}
+                </span>
+              </div>
+            ))}
+          </div>
+        </BentoCard>
+      ),
+    },
+    {
+      id: "github",
+      span: "lg:col-span-12",
+      render: () => (
+        <BentoCard eyebrow="GitHub activity" index={3} className="h-full">
+          <p className="mb-4 text-sm md:text-base font-[gilroy-medium] text-content/65">
+            A year of contributions on{" "}
+            <a
+              href="https://github.com/devXlalit"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-content underline decoration-[#08D9D6] underline-offset-2"
+            >
+              @devXlalit
+            </a>
+          </p>
+          <GitHubHeatmap />
+        </BentoCard>
+      ),
+    },
+  ];
+
+  const projectItems = [
+    ...projects.map((project, index) => ({
+      id: `project-${index}`,
+      span: PROJECT_SPANS[index] || "lg:col-span-4",
+      render: () => (
+        <ProjectCard project={project} index={index} className="h-full" />
+      ),
+    })),
+    {
+      id: "upcoming",
+      span: "lg:col-span-12",
+      render: () => (
+        <BentoCard
+          eyebrow="Upcoming"
+          accent="pink"
+          index={projects.length}
+          className="h-full"
+        >
+          <div className="flex flex-col items-start gap-6 md:flex-row md:items-center md:justify-between">
+            <div>
+              <h3 className="text-xl md:text-2xl leading-tight">
+                Something new is in the works
+              </h3>
+              <p className="mt-2 max-w-lg text-sm md:text-base font-[gilroy-medium] text-content/65 leading-relaxed">
+                A fresh project is currently in development. Check back soon —
+                or reach out if you&apos;d like to build it with me.
+              </p>
+            </div>
+            <img
+              src={upcomingProject}
+              alt="Upcoming project preview"
+              loading="lazy"
+              className="h-28 w-full rounded-2xl object-cover md:h-32 md:w-72"
+            />
+          </div>
+        </BentoCard>
+      ),
+    },
+  ];
 
   return (
     <main className="font-extrabold">
@@ -56,122 +232,7 @@ const Home = () => {
 
       {/* ───────────────────────── HOME / IDENTITY ───────────────────────── */}
       <section id="home" className="scroll-mt-28">
-        <div className="grid grid-cols-1 gap-4 md:gap-5 lg:grid-cols-12">
-          {/* Identity */}
-          <BentoCard
-            dark
-            eyebrow="FULL STACK · DEVOPS"
-            index={0}
-            interactive={false}
-            className="lg:col-span-8 lg:row-span-2"
-          >
-            <div className="flex flex-col gap-6 md:flex-row md:items-start md:justify-between">
-              <div className="min-w-0">
-                <span className="inline-flex items-center gap-2 rounded-full bg-[#08D9D6]/15 px-3 py-1 text-xs md:text-sm font-[gilroy-medium] text-[#08D9D6]">
-                  <span className="h-2 w-2 rounded-full bg-[#08D9D6] animate-pulse" />
-                  Available for freelance
-                </span>
-                <h1 className="mt-4 text-5xl md:text-7xl leading-[1.02]">
-                  I&apos;m <span className="text-[#08D9D6]">Lalit,</span>
-                </h1>
-                <h2 className="mt-1 flex flex-col text-3xl md:text-6xl leading-tight">
-                  {/* Reserve one line and never wrap so the cycling word
-                      (FULL STACK / MERN STACK / …) can't resize the hero. */}
-                  <span className="block min-h-[1.25em] whitespace-nowrap">
-                    <TextChanger />
-                  </span>
-                  <span className="text-[#FF2E63]">DEVELOPER</span>
-                </h2>
-                <p className="mt-5 max-w-xl text-sm md:text-lg font-[gilroy-medium] text-[#EAEAEA]/70 leading-relaxed">
-                  I build scalable, SEO-friendly web apps and reliable cloud
-                  deployments — owning the stack from database design to CI/CD.
-                </p>
-
-                <div className="mt-7 flex flex-wrap gap-3">
-                  <button
-                    type="button"
-                    onClick={() => scrollTo("projects")}
-                    className="flex items-center gap-1 rounded-full bg-[#08D9D6] px-6 py-3 text-sm text-[#252A34] transition-transform duration-300 hover:scale-105"
-                  >
-                    Explore my work
-                    <MdArrowOutward size={18} />
-                  </button>
-                  <button
-                    type="button"
-                    onClick={() => openContact()}
-                    className="rounded-full border border-[#EAEAEA]/25 px-6 py-3 text-sm text-[#EAEAEA] transition-colors duration-300 hover:bg-[#EAEAEA] hover:text-[#252A34]"
-                  >
-                    Let&apos;s talk
-                  </button>
-                </div>
-              </div>
-
-              <img
-                src={AVATAR_URL}
-                referrerPolicy="no-referrer"
-                alt="Lalit Pagare"
-                className="h-24 w-24 shrink-0 rounded-2xl object-cover shadow-[0px_8px_30px_-12px_rgba(0,0,0,0.5)] ring-2 ring-[#08D9D6]/40 md:h-28 md:w-28"
-              />
-            </div>
-          </BentoCard>
-
-          {/* Social / connect */}
-          <BentoCard eyebrow="Connect" index={1} className="lg:col-span-4">
-            <div className="grid flex-1 auto-rows-fr grid-cols-2 gap-3">
-              {socials.map(({ Icon, title, href, hover }) => (
-                <a
-                  key={title}
-                  href={href}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex items-center gap-2 rounded-2xl border border-content/[0.07] px-3 py-3 text-sm font-[gilroy-medium] text-content/80 transition-all duration-200 hover:-translate-y-0.5 hover:border-content/15"
-                >
-                  <Icon
-                    size={26}
-                    className={`text-content transition-colors duration-200 ${hover}`}
-                  />
-                  {title}
-                </a>
-              ))}
-            </div>
-          </BentoCard>
-
-          {/* Stats */}
-          <BentoCard eyebrow="By the numbers" index={2} className="lg:col-span-4">
-            <div className="grid flex-1 content-center grid-cols-3 gap-2">
-              {stats.map(({ value, label }) => (
-                <div key={label} className="flex flex-col">
-                  <span className="text-3xl md:text-4xl text-[#08D9D6] leading-none">
-                    {value}
-                  </span>
-                  <span className="mt-2 text-xs md:text-sm font-[gilroy-medium] text-content/65 leading-snug">
-                    {label}
-                  </span>
-                </div>
-              ))}
-            </div>
-          </BentoCard>
-
-          {/* GitHub activity */}
-          <BentoCard
-            eyebrow="GitHub activity"
-            index={3}
-            className="lg:col-span-12"
-          >
-            <p className="mb-4 text-sm md:text-base font-[gilroy-medium] text-content/65">
-              A year of contributions on{" "}
-              <a
-                href="https://github.com/devXlalit"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-content underline decoration-[#08D9D6] underline-offset-2"
-              >
-                @devXlalit
-              </a>
-            </p>
-            <GitHubHeatmap />
-          </BentoCard>
-        </div>
+        <SortableGrid items={heroItems} className={GRID_CLASS} />
       </section>
 
       {/* ───────────────────────────── SKILLS ────────────────────────────── */}
@@ -229,42 +290,7 @@ const Home = () => {
           </h2>
         </div>
 
-        <div className="grid grid-cols-1 gap-4 md:gap-5 lg:grid-cols-12">
-          {projects.map((project, index) => (
-            <ProjectCard
-              key={index}
-              project={project}
-              index={index}
-              className={PROJECT_SPANS[index] || "lg:col-span-4"}
-            />
-          ))}
-
-          {/* Upcoming — the one place pink is spent */}
-          <BentoCard
-            eyebrow="Upcoming"
-            accent="pink"
-            index={projects.length}
-            className="lg:col-span-12"
-          >
-            <div className="flex flex-col items-start gap-6 md:flex-row md:items-center md:justify-between">
-              <div>
-                <h3 className="text-xl md:text-2xl leading-tight">
-                  Something new is in the works
-                </h3>
-                <p className="mt-2 max-w-lg text-sm md:text-base font-[gilroy-medium] text-content/65 leading-relaxed">
-                  A fresh project is currently in development. Check back soon —
-                  or reach out if you&apos;d like to build it with me.
-                </p>
-              </div>
-              <img
-                src={upcomingProject}
-                alt="Upcoming project preview"
-                loading="lazy"
-                className="h-28 w-full rounded-2xl object-cover md:h-32 md:w-72"
-              />
-            </div>
-          </BentoCard>
-        </div>
+        <SortableGrid items={projectItems} className={GRID_CLASS} />
       </section>
 
       {/* ───────────────────────────── CONTACT ───────────────────────────── */}
